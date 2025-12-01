@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Future of Beverages - Viv-Elion</title>
+    <!-- Google Fonts for a premium look -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; color: #333; line-height: 1.8; background-color: #fff; }
+        
+        /* Navigation Bar */
+        nav { padding: 20px; text-align: center; background: white; border-bottom: 1px solid #f0f0f0; }
+        nav a { text-decoration: none; color: #000; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9em; }
+
+        /* Hero Image Section (The big image at the top) */
+        .hero { 
+            position: relative;
+            height: 60vh; /* Takes up 60% of the screen height */
+            min-height: 400px;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            /* Replace the URL below with your own image link if you have one! */
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; 
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 3em; 
+            margin: 0; 
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5); 
+        }
+        
+        .hero-content .date { 
+            display: block; 
+            margin-top: 15px; 
+            font-size: 1.1em; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+            opacity: 0.9; 
+        }
+
+        /* Article Container */
+        .article-container { 
+            max-width: 700px; 
+            margin: -50px auto 0; /* Pulls the content up slightly over the image */
+            padding: 50px 30px; 
+            background: white; 
+            position: relative; 
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* Typography */
+        p { margin-bottom: 25px; font-size: 1.15em; color: #444; }
+        h2 { margin-top: 40px; color: #111; font-family: 'Playfair Display', serif; font-size: 1.8em; }
+        
+        /* Highlight Quote */
+        blockquote { 
+            border-left: 4px solid #2563eb; 
+            margin: 40px 0; 
+            padding: 10px 30px; 
+            font-style: italic; 
+            font-size: 1.3em;
+            color: #555; 
+            background: #f8faff;
+        }
+
+        /* Author Box */
+        .author-box { 
+            display: flex; 
+            align-items: center; 
+            margin-top: 60px; 
+            padding-top: 30px; 
+            border-top: 1px solid #eee; 
+        }
+        .author-avatar { width: 50px; height: 50px; background: #ddd; border-radius: 50%; margin-right: 15px; }
+        .author-info strong { display: block; color: #000; }
+        .author-info small { color: #888; }
+
+        /* Back Button */
+        .back-container { text-align: center; margin: 60px 0 20px; }
+        .back-btn { 
+            display: inline-block; 
+            text-decoration: none; 
+            color: #333; 
+            border: 1px solid #333; 
+            padding: 12px 30px; 
+            border-radius: 30px; 
+            transition: 0.3s; 
+            font-weight: bold;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+        .back-btn:hover { background: #333; color: white; }
+
+        /* Footer */
+        footer { text-align: center; padding: 40px; background: #111; color: #666; font-size: 0.8em; margin-top: 50px; }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2em; }
+            .article-container { margin-top: 0; padding: 30px 20px; box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Viv-Elion Beverages</a>
+    </nav>
+
+    <!-- Hero Image -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>The Future of Beverages</h1>
+            <span class="date">December 1, 2025</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <article class="article-container">
+        <p><strong>Beverages are more than just drinks; they are an experience.</strong> Today marks a special day in our history as we transition to a fully digital platform.</p>
+
+        <p>At Viv-Elion, we believe that technology and taste go hand in hand. By launching this new platform, we are opening doors to exciting opportunities for our community.</p>
+        
+        <h2>1. Global Reach</h2>
+        <p>Our unique flavors can now be discovered by enthusiasts all over the world. We are no longer limited by geography.</p>
+
+        <h2>2. Sustainability Goals</h2>
+        <p>We are committing to 100% recyclable packaging by 2026. This website will be the home for all our sustainability reports and updates.</p>
+
+        <blockquote>
+            "Innovation differentiates a leader from a follower. We choose to lead."
+        </blockquote>
+
+        <p>We are just getting started. Stay tuned for our upcoming summer collection, featuring exotic fruits from around the globe.</p>
+
+        <!-- Author Section -->
+        <div class="author-box">
+            <!-- Simple grey circle as avatar placeholder -->
+            <div class="author-avatar" style="background-image: url('https://ui-avatars.com/api/?name=Viv+Elion&background=2563eb&color=fff'); background-size: cover;"></div>
+            <div class="author-info">
+                <strong>Written by Viv-Elion Team</strong>
+                <small>Official Editorial Team</small>
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <div class="back-container">
+            <a href="index.html" class="back-btn">← Back to Homepage</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Viv-Elion Beverages. All rights reserved.
+    </footer>
+
+</body>
+</html>
