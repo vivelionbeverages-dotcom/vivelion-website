@@ -3,68 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Future of Beverages - Viv-Elion</title>
+    <title>The Future of Beverages | Viv-Elion Blog</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'brand-navy': '#0a192f', // Ensure this matches your config
-              'brand-gold': '#d4af37',
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { brand: { navy: '#0a192f', gold: '#d4af37', sky: '#0ea5e9' } },
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'], serif: ['Cinzel', 'serif'] }
+                }
             }
-          }
         }
-      }
     </script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans">
+<body class="bg-gray-50 text-slate-800 font-sans">
 
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-brand-navy">Viv-Elion</a>
-            <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="text-gray-600 hover:text-brand-navy transition">Home</a>
-                <a href="blog.html" class="text-brand-navy font-semibold">Blog</a>
-            </div>
-        </div>
-    </nav>
-
-    <header class="bg-brand-navy text-white py-20 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">The Future of Beverages</h1>
-        <p class="text-slate-300 text-lg">Innovating hydration with advanced projection technology.</p>
+    <header class="bg-brand-navy text-white py-20 text-center px-4 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-brand-sky opacity-10"></div>
+        <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4 relative z-10">The Future of Beverages</h1>
+        <p class="text-brand-gold font-bold tracking-widest text-sm relative z-10">INNOVATION & TECHNOLOGY</p>
     </header>
 
-    <section class="container mx-auto px-6 py-12 max-w-3xl">
-        <div class="bg-white p-8 rounded-xl shadow-sm">
-            <span class="text-sm text-brand-navy font-bold uppercase tracking-wider">Innovation</span>
-            <p class="text-gray-500 text-sm mb-6">Published on Dec 5, 2025</p>
-            
-            <div class="prose prose-lg text-gray-600">
-                <p class="mb-4">
-                    At Viv-Elion, we aren't just bottling water; we are redefining how you interact with it. 
-                    Our latest research into holographic interfaces suggests a future where your bottle doesn't just hold liquid—it displays your hydration stats in real-time.
-                </p>
-                <p class="mb-4">
-                    Imagine a wearable device that projects your daily water intake directly onto your wrist, syncing perfectly with your Viv-Elion smart bottle. This is the technology we are building today.
-                </p>
-                <h3 class="text-2xl font-bold text-brand-navy mt-8 mb-4">Why Holographic Tech?</h3>
-                <p>
-                    Screens are a thing of the past. Projection technology allows for a cleaner, more hygienic interaction that keeps you focused on your health without the distraction of a phone screen.
-                </p>
-            </div>
-            
-            <div class="mt-12 pt-8 border-t border-gray-100">
-                <a href="blog.html" class="text-brand-navy font-bold hover:underline">← Back to Blog</a>
-            </div>
+    <article class="max-w-3xl mx-auto -mt-10 bg-white p-8 md:p-12 rounded-lg shadow-xl relative z-10 mb-20">
+        <div class="flex items-center gap-2 mb-8 text-xs font-bold text-brand-sky uppercase tracking-widest">
+            <span>Tech Trends</span> • <span>Dec 15, 2025</span>
         </div>
-    </section>
 
-    <footer class="bg-brand-navy text-white py-8 mt-12">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 Viv-Elion. All rights reserved.</p>
-        </div>
-    </footer>
+        <p class="text-lg leading-relaxed mb-6 text-slate-600">
+            At Viv-Elion, we aren't just bottling water; we are looking at how technology changes the way we drink. 
+            Imagine a bottle that doesn't just hold water, but interacts with you.
+        </p>
+
+        <h3 class="text-2xl font-serif font-bold text-brand-navy mb-4">Projection Technology on Bottles</h3>
+        <p class="mb-6 leading-relaxed">
+            We are currently exploring concepts for "Smart Labels." Using micro-projection technology, future bottles could display:
+        </p>
+        <ul class="list-disc pl-6 mb-6 space-y-2 text-slate-700">
+            <li>Real-time purity levels of the water inside.</li>
+            <li>Hydration reminders synced to your smartwatch.</li>
+            <li>Customized messages for gifting or events.</li>
+        </ul>
+
+        <h3 class="text-2xl font-serif font-bold text-brand-navy mb-4">Why Tech Matters</h3>
+        <p class="mb-8 leading-relaxed">
+            In a world of advanced tech, your hydration shouldn't be analog. While our current focus is on the purity of the water itself (using our 8-stage automated plant), our R&D team is constantly looking ahead.
+        </p>
+
+        <a href="index.html" class="inline-block text-brand-navy font-bold border-b-2 border-brand-navy hover:text-brand-gold hover:border-brand-gold transition pb-1">
+            &larr; Back to Home
+        </a>
+    </article>
 
 </body>
 </html>
