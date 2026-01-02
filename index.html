@@ -13,7 +13,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Cinzel:wght@700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -45,8 +45,8 @@
             overflow-x: hidden;
         }
 
-        /* --- THE TURBO NAVY AURORA ENGINE --- */
-        .aurora-bg {
+        /* --- 1. THE TURBO AURORA ENGINE (Background) --- */
+        .aurora-container {
             position: fixed;
             top: 0;
             left: 0;
@@ -54,97 +54,89 @@
             height: 100%;
             z-index: -1;
             background: #0a192f;
+            overflow: hidden;
         }
 
         .blob {
-            position: fixed;
+            position: absolute;
             border-radius: 50%;
-            filter: blur(80px); /* Soft mixing */
-            z-index: -1;
-            opacity: 0.6;
-            animation: floatFast 10s infinite ease-in-out alternate;
+            filter: blur(90px);
+            opacity: 0.5;
+            animation: floatFast 12s infinite ease-in-out alternate;
         }
 
-        /* Intense, Fast Moving Colors */
-        .blob-1 {
-            top: -10%; left: -10%; width: 60vw; height: 60vw;
-            background: #1e3a8a; /* Royal Blue */
-            animation-duration: 12s;
-        }
-        .blob-2 {
-            bottom: -10%; right: -10%; width: 60vw; height: 60vw;
-            background: #111111; /* Deep Dark */
-            animation-duration: 15s;
-            animation-delay: -2s;
-        }
-        .blob-3 {
-            top: 40%; left: 30%; width: 40vw; height: 40vw;
-            background: #d4af37; /* The GOLD Signature */
-            opacity: 0.25; /* Subtle gold glow */
-            animation-duration: 9s;
-            animation-delay: -5s;
-        }
-        .blob-4 {
-            bottom: 20%; left: 10%; width: 30vw; height: 30vw;
-            background: #2563eb; /* Lighter Blue */
-            opacity: 0.3;
-            animation-duration: 11s;
-        }
+        /* Intense Navy/Gold Mixing */
+        .blob-1 { top: -10%; left: -10%; width: 70vw; height: 70vw; background: #1e3a8a; animation-duration: 15s; }
+        .blob-2 { bottom: -10%; right: -10%; width: 70vw; height: 70vw; background: #000000; animation-duration: 18s; animation-delay: -5s; }
+        .blob-3 { top: 40%; left: 30%; width: 50vw; height: 50vw; background: #d4af37; opacity: 0.2; animation-duration: 10s; animation-delay: -8s; }
+        .blob-4 { bottom: 10%; left: 10%; width: 40vw; height: 40vw; background: #2563eb; opacity: 0.3; animation-duration: 14s; }
 
         @keyframes floatFast {
             0% { transform: translate(0, 0) scale(1) rotate(0deg); }
-            50% { transform: translate(50px, 30px) scale(1.1) rotate(10deg); }
-            100% { transform: translate(-30px, 80px) scale(0.9) rotate(-10deg); }
+            50% { transform: translate(40px, 20px) scale(1.1) rotate(5deg); }
+            100% { transform: translate(-40px, 60px) scale(0.9) rotate(-5deg); }
         }
 
-        /* --- ULTRA GLASS STYLE --- */
+        /* --- 2. ULTRA GLASS PANELS --- */
         .glass-panel {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
 
         .glass-card {
             @apply glass-panel transition-all duration-300;
         }
         .glass-card:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(212, 175, 55, 0.5); /* Gold Border Hover */
-            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(212, 175, 55, 0.5); /* Gold Border on Hover */
+            transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        /* --- 3. FOOTER SPLASH (The "Coca-Cola" Footer Glow) --- */
+        .footer-glow {
+            background: radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.3) 0%, transparent 60%);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <div class="aurora-bg"></div>
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div> <div class="blob blob-4"></div>
+    <div class="aurora-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+    </div>
 
     <nav class="fixed w-full z-50 transition-all duration-300 glass-panel border-x-0 border-t-0">
         <div class="container mx-auto px-6 h-24 flex justify-between items-center">
-            
             <a href="#" class="flex flex-col group">
-                <span class="text-2xl font-serif font-black text-white tracking-widest drop-shadow-md group-hover:text-brand-gold transition">VIV-ELION</span>
+                <span class="text-3xl font-serif font-black text-white tracking-widest drop-shadow-md group-hover:text-brand-gold transition">VIV-ELION</span>
                 <span class="text-[9px] uppercase tracking-[0.4em] text-slate-300 font-bold">Beverage Company</span>
             </a>
 
-            <div class="hidden md:flex space-x-12 font-bold text-xs uppercase tracking-widest text-slate-200 items-center">
-                <a href="#" class="hover:text-brand-gold transition py-6 border-b-2 border-transparent hover:border-brand-gold">Our Company</a>
-                <a href="#process" class="hover:text-brand-gold transition py-6 border-b-2 border-transparent hover:border-brand-gold">Our Process</a>
+            <div class="hidden md:flex space-x-10 font-bold text-xs uppercase tracking-widest text-slate-200 items-center">
+                <a href="#about" class="hover:text-brand-gold transition py-6 border-b-2 border-transparent hover:border-brand-gold">Our Company</a>
+                <a href="#process" class="hover:text-brand-gold transition py-6 border-b-2 border-transparent hover:border-brand-gold">Process</a>
                 <a href="#brands" class="hover:text-brand-gold transition py-6 border-b-2 border-transparent hover:border-brand-gold">Brands</a>
-                <a href="distributors.html" class="hover:text-brand-gold transition py-6 border-b-2 border-transparent hover:border-brand-gold">Partner With Us</a>
-                <a href="#contact" class="glass-panel px-8 py-3 rounded-full text-brand-gold border-brand-gold/50 hover:bg-brand-gold hover:text-brand-navy transition shadow-lg">Contact</a>
+                <a href="#sustainability" class="hover:text-brand-gold transition py-6 border-b-2 border-transparent hover:border-brand-gold">Sustainability</a>
+                <a href="distributors.html" class="glass-panel px-8 py-3 rounded-full text-brand-gold border-brand-gold/50 hover:bg-brand-gold hover:text-brand-navy transition shadow-lg">Partner With Us</a>
             </div>
 
             <button onclick="toggleMenu()" class="md:hidden text-2xl text-white"><i class="fa-solid fa-bars-staggered"></i></button>
         </div>
         
         <div id="mobile-menu" class="hidden md:hidden glass-panel border-x-0 absolute w-full left-0">
-            <a href="#" class="block py-4 px-6 border-b border-white/10 font-bold text-white hover:text-brand-gold">OUR COMPANY</a>
+            <a href="#about" class="block py-4 px-6 border-b border-white/10 font-bold text-white hover:text-brand-gold">OUR COMPANY</a>
             <a href="#brands" class="block py-4 px-6 border-b border-white/10 font-bold text-white hover:text-brand-gold">BRANDS</a>
             <a href="distributors.html" class="block py-4 px-6 border-b border-white/10 font-bold text-white hover:text-brand-gold">DISTRIBUTORS</a>
         </div>
@@ -158,8 +150,8 @@
             <h1 class="text-6xl md:text-9xl font-serif font-bold leading-none mb-8 text-white drop-shadow-2xl">
                 REFRESH <br> THE <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-100">WORLD</span>
             </h1>
-            <p class="text-lg md:text-2xl text-slate-300 mb-12 font-light max-w-2xl mx-auto drop-shadow-md">
-                Crafting the purest mineral water in Punjab with world-class automation and a commitment to life.
+            <p class="text-lg md:text-2xl text-slate-300 mb-12 font-light max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+                We are Viv-Elion. Born in Punjab, built for the world. We don't just bottle water; we bottle perfection, purity, and a promise of a better tomorrow.
             </p>
             <div class="flex flex-col md:flex-row gap-6 justify-center">
                 <a href="distributors.html" class="glass-panel bg-brand-gold/90 text-brand-navy px-10 py-4 font-bold uppercase tracking-widest hover:bg-white transition duration-300 shadow-xl rounded-sm">
@@ -172,52 +164,63 @@
         </div>
     </header>
 
-    <div class="glass-panel py-12 relative z-30 border-x-0 mx-4 md:mx-0 rounded-2xl md:rounded-none">
-        <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/10">
-            <div data-aos="fade-up" data-aos-delay="0">
-                <h3 class="text-4xl font-serif text-brand-gold mb-2">100%</h3>
-                <p class="text-xs uppercase tracking-widest text-slate-300">Automated Plant</p>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-4xl font-serif text-brand-gold mb-2">8-Stage</h3>
-                <p class="text-xs uppercase tracking-widest text-slate-300">Purification</p>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="200">
-                <h3 class="text-4xl font-serif text-brand-gold mb-2">BIS</h3>
-                <p class="text-xs uppercase tracking-widest text-slate-300">Certified Quality</p>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="300">
-                <h3 class="text-4xl font-serif text-brand-gold mb-2">0%</h3>
-                <p class="text-xs uppercase tracking-widest text-slate-300">Human Touch</p>
+    <section id="about" class="py-32 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <span class="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Our Story</span>
+                    <h2 class="text-4xl md:text-6xl font-serif font-bold leading-tight mb-8 text-white">More Than Just Water.<br>A Legacy of Purity.</h2>
+                    <p class="text-slate-300 text-lg leading-relaxed mb-6">
+                        Viv-Elion Beverages was established with a singular, uncompromising vision: to redefine what "premium" means in the hydration industry. Located in the pristine aquifers of Sangrana, Punjab, our facility is not just a factory—it is a sanctuary of technology and hygiene.
+                    </p>
+                    <p class="text-slate-300 text-lg leading-relaxed mb-8">
+                        While others focus on volume, we focus on virtue. Every drop that enters our bottles has been filtered through 8 stages of advanced purification, ensuring that when you open a Viv-Elion bottle, you are tasting water as nature intended it to be—untouched, pure, and life-giving.
+                    </p>
+                    <div class="flex gap-8">
+                        <div>
+                            <span class="text-4xl font-serif text-brand-gold font-bold block mb-2">100%</span>
+                            <span class="text-xs uppercase tracking-widest text-slate-400">Automated</span>
+                        </div>
+                        <div>
+                            <span class="text-4xl font-serif text-brand-gold font-bold block mb-2">BIS</span>
+                            <span class="text-xs uppercase tracking-widest text-slate-400">Certified</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="glass-panel p-2 rounded-2xl rotate-2 hover:rotate-0 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=2560&auto=format&fit=crop" class="w-full rounded-xl opacity-90" alt="Factory">
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <section id="process" class="py-32 relative z-10">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-20" data-aos="fade-up">
-                <span class="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm">How We Do It</span>
-                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mt-4">The Science of Purity</h2>
+            <div class="text-center mb-24" data-aos="fade-up">
+                <span class="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm">The Science</span>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mt-4">Uncompromising Quality Control</h2>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-card p-10 rounded-2xl relative overflow-hidden group">
-                    <div class="absolute -right-4 -top-4 text-9xl font-serif text-white/5 font-black group-hover:text-brand-gold/10 transition">01</div>
-                    <i class="fa-solid fa-faucet-drip text-4xl text-brand-gold mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4">Source Extraction</h3>
-                    <p class="text-slate-300 leading-relaxed">We source directly from deep underground aquifers in Sangrana, ensuring the base water is naturally rich in minerals before we even begin.</p>
+                <div class="glass-card p-12 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-6 text-9xl font-serif text-white/5 font-black group-hover:text-brand-gold/10 transition">01</div>
+                    <i class="fa-solid fa-faucet-drip text-4xl text-brand-gold mb-8"></i>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Source Extraction</h3>
+                    <p class="text-slate-400 leading-relaxed">We source directly from deep underground aquifers. This water is naturally filtered by layers of earth, providing a mineral-rich foundation that is free from surface pollutants.</p>
                 </div>
-                <div class="glass-card p-10 rounded-2xl relative overflow-hidden group">
-                    <div class="absolute -right-4 -top-4 text-9xl font-serif text-white/5 font-black group-hover:text-brand-gold/10 transition">02</div>
-                    <i class="fa-solid fa-filter text-4xl text-brand-gold mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4">8-Stage Filtration</h3>
-                    <p class="text-slate-300 leading-relaxed">Our water passes through sand filters, carbon filters, reverse osmosis, and UV sterilization to remove every impurity while keeping the taste.</p>
+                <div class="glass-card p-12 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-6 text-9xl font-serif text-white/5 font-black group-hover:text-brand-gold/10 transition">02</div>
+                    <i class="fa-solid fa-filter text-4xl text-brand-gold mb-8"></i>
+                    <h3 class="text-2xl font-bold mb-4 text-white">8-Stage Filtration</h3>
+                    <p class="text-slate-400 leading-relaxed">Our proprietary filtration process involves Sand Filters, Carbon Activation, Reverse Osmosis (RO), and UV Sterilization. We remove contaminants at the molecular level.</p>
                 </div>
-                <div class="glass-card p-10 rounded-2xl relative overflow-hidden group">
-                    <div class="absolute -right-4 -top-4 text-9xl font-serif text-white/5 font-black group-hover:text-brand-gold/10 transition">03</div>
-                    <i class="fa-solid fa-robot text-4xl text-brand-gold mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4">Automated Bottling</h3>
-                    <p class="text-slate-300 leading-relaxed">From washing to filling and capping, no human hand touches the bottle. This guarantees 100% hygiene and BIS compliance.</p>
+                <div class="glass-card p-12 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-6 text-9xl font-serif text-white/5 font-black group-hover:text-brand-gold/10 transition">03</div>
+                    <i class="fa-solid fa-robot text-4xl text-brand-gold mb-8"></i>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Touch-Free Bottling</h3>
+                    <p class="text-slate-400 leading-relaxed">From the washing of the bottle to the final capping and sealing, the entire process is automated. No human hand touches the product, guaranteeing absolute hygiene.</p>
                 </div>
             </div>
         </div>
@@ -231,17 +234,18 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-12">
-                <div class="glass-card p-8 rounded-2xl text-center">
+                <div class="glass-card p-10 rounded-2xl text-center">
                     <div class="h-64 flex items-center justify-center mb-6">
                         <div class="w-32 h-56 glass-panel rounded-full flex items-center justify-center text-slate-400 text-4xl border-white/5">
                             <i class="fa-solid fa-bottle-water"></i>
                         </div>
                     </div>
                     <h3 class="text-2xl font-serif font-bold text-white mb-2">Viv-Elion Mini</h3>
-                    <p class="text-brand-gold font-bold text-sm tracking-widest mb-4">250ML EDITION</p>
+                    <p class="text-brand-gold font-bold text-sm tracking-widest mb-6">250ML EDITION</p>
+                    <p class="text-slate-400 text-sm">Designed for hospitality, corporate events, and quick refreshment.</p>
                 </div>
 
-                <div class="glass-card p-8 rounded-2xl scale-105 text-center relative border-brand-gold/30 bg-white/10">
+                <div class="glass-card p-10 rounded-2xl scale-105 text-center relative border-brand-gold/30 bg-white/5">
                     <div class="absolute top-0 right-0 bg-brand-gold text-brand-navy text-xs font-bold px-4 py-2 uppercase tracking-widest rounded-bl-lg">Best Seller</div>
                     <div class="h-64 flex items-center justify-center mb-6">
                         <div class="w-32 h-56 glass-panel bg-white/10 rounded-full flex items-center justify-center text-white text-4xl border-white/20">
@@ -249,42 +253,19 @@
                         </div>
                     </div>
                     <h3 class="text-3xl font-serif font-bold text-white mb-2">Viv-Elion Handy</h3>
-                    <p class="text-brand-gold font-bold text-sm tracking-widest mb-4">500ML TRAVEL</p>
+                    <p class="text-brand-gold font-bold text-sm tracking-widest mb-6">500ML TRAVEL</p>
+                    <p class="text-slate-300 text-sm">The perfect travel companion. Ergonomic grip for hydration on the move.</p>
                 </div>
 
-                <div class="glass-card p-8 rounded-2xl text-center">
+                <div class="glass-card p-10 rounded-2xl text-center">
                     <div class="h-64 flex items-center justify-center mb-6">
                         <div class="w-32 h-56 glass-panel rounded-full flex items-center justify-center text-slate-400 text-4xl border-white/5">
                             <i class="fa-solid fa-bottle-water"></i>
                         </div>
                     </div>
                     <h3 class="text-2xl font-serif font-bold text-white mb-2">Viv-Elion Pure</h3>
-                    <p class="text-brand-gold font-bold text-sm tracking-widest mb-4">1 LITRE HOME</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 relative z-10">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-            <div class="md:w-1/3 relative" data-aos="fade-up">
-                <div class="w-full h-[400px] glass-panel p-2 shadow-2xl overflow-hidden relative rounded-lg rotate-2 hover:rotate-0 transition duration-500">
-                    <img src="https://github.com/vivelionbeverages-dotcom/vivelion-website/blob/main/ceo-vishal.jpeg?raw=true" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700 rounded" alt="Vishal Kumar CEO">
-                </div>
-                <div class="absolute -bottom-6 -right-6 w-32 h-32 glass-panel bg-brand-gold/80 p-6 flex items-center justify-center shadow-lg rounded-full backdrop-blur-xl">
-                   <i class="fa-solid fa-quote-right text-4xl text-brand-navy"></i>
-                </div>
-            </div>
-            <div class="md:w-2/3" data-aos="fade-up" data-aos-delay="200">
-                <h2 class="text-3xl font-serif font-bold text-white mb-6">A Message from Leadership</h2>
-                <div class="glass-panel p-10 rounded-2xl border-l-4 border-brand-gold">
-                    <blockquote class="text-2xl font-light text-slate-200 italic leading-relaxed mb-8">
-                        "We built Viv-Elion with a simple yet ambitious goal: to bring international quality hydration to every home in Punjab. Purity is not a luxury; it is a right."
-                    </blockquote>
-                    <div>
-                        <h4 class="text-xl font-bold text-white tracking-wide">Mr. Vishal Kumar</h4>
-                        <p class="text-sm text-brand-gold uppercase tracking-widest font-bold">The Founder & CEO</p>
-                    </div>
+                    <p class="text-brand-gold font-bold text-sm tracking-widest mb-6">1 LITRE HOME</p>
+                    <p class="text-slate-400 text-sm">For the modern household. Ensuring your family drinks only the best.</p>
                 </div>
             </div>
         </div>
@@ -294,33 +275,37 @@
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
             <div class="md:w-1/2" data-aos="fade-right">
                 <span class="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Our Commitment</span>
-                <h2 class="text-4xl md:text-6xl font-serif font-bold leading-tight mb-8 text-white">Every Drop Counts. <br>Every Bottle Matters.</h2>
-                <p class="text-slate-300 text-lg leading-relaxed mb-8">
-                    At Viv-Elion, we don't just extract water; we respect it. We are committed to 100% recyclable packaging and sustainable groundwater practices in Sangrana.
+                <h2 class="text-4xl md:text-6xl font-serif font-bold leading-tight mb-8 text-white">World Without Waste.</h2>
+                <p class="text-slate-300 text-lg leading-relaxed mb-6">
+                    Our responsibility extends beyond the bottle. At Viv-Elion, we are pioneering a "Circular Economy" model in Punjab. We recognize that our planet's resources are finite, and we treat them with the respect they deserve.
                 </p>
-                <a href="#" class="text-brand-gold font-bold uppercase tracking-widest hover:text-white transition border-b border-brand-gold pb-1 inline-block">Read Our Sustainability Report &rarr;</a>
+                <p class="text-slate-300 text-lg leading-relaxed mb-8">
+                    We have implemented advanced rainwater harvesting systems at our Sangrana plant to replenish the groundwater levels, returning more water to nature than we extract. Furthermore, our PET bottles are 100% recyclable.
+                </p>
+                <a href="#" class="text-brand-gold font-bold uppercase tracking-widest hover:text-white transition border-b border-brand-gold pb-1 inline-block">Read Our 2026 Impact Report &rarr;</a>
             </div>
             <div class="md:w-1/2 grid grid-cols-2 gap-6" data-aos="fade-left">
                 <div class="glass-card p-8 rounded-2xl text-center">
                     <i class="fa-solid fa-recycle text-5xl text-brand-gold mb-6"></i>
                     <h4 class="font-bold text-xl mb-2 text-white">Recyclable</h4>
-                    <p class="text-sm text-slate-300">100% PET bottles.</p>
+                    <p class="text-sm text-slate-300">100% PET bottles designed for reuse.</p>
                 </div>
                 <div class="glass-card p-8 rounded-2xl text-center">
                     <i class="fa-solid fa-hand-holding-droplet text-5xl text-brand-gold mb-6"></i>
-                    <h4 class="font-bold text-xl mb-2 text-white">Preservation</h4>
-                    <p class="text-sm text-slate-300">Rainwater harvesting.</p>
+                    <h4 class="font-bold text-xl mb-2 text-white">Water Positive</h4>
+                    <p class="text-sm text-slate-300">Advanced aquifer recharge systems.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="bg-black text-white pt-20 pb-10 font-sans text-sm mt-20 border-t border-white/10 relative z-10">
-        <div class="container mx-auto px-6">
-            
-            <div class="flex flex-col md:flex-row justify-between items-start mb-16 border-b border-white/10 pb-10">
-                <div class="mb-8 md:mb-0">
-                    <span class="text-3xl font-serif font-bold tracking-widest block mb-2 text-white">VIV-ELION</span>
+    <footer id="contact" class="bg-black text-white pt-24 pb-12 font-sans text-sm mt-20 relative overflow-hidden z-20">
+        <div class="footer-glow"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-20 border-b border-white/10 pb-12">
+                <div class="mb-10 md:mb-0">
+                    <span class="text-4xl font-serif font-black tracking-widest block mb-2 text-white">VIV-ELION</span>
                     <span class="text-xs text-slate-500 uppercase tracking-[0.4em]">The Beverage Company</span>
                 </div>
                 <div class="flex gap-4">
@@ -330,18 +315,18 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16 text-slate-400">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-20 text-slate-400">
                 <div>
-                    <h4 class="font-bold text-white uppercase tracking-wider mb-6 text-xs">Our Company</h4>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-8 text-xs">Our Company</h4>
                     <ul class="space-y-4">
-                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#about" class="hover:text-white transition">About Us</a></li>
                         <li><a href="#" class="hover:text-white transition">Leadership</a></li>
                         <li><a href="#" class="hover:text-white transition">History</a></li>
                         <li><a href="#" class="hover:text-white transition">Careers</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold text-white uppercase tracking-wider mb-6 text-xs">Business</h4>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-8 text-xs">Business</h4>
                     <ul class="space-y-4">
                         <li><a href="distributors.html" class="hover:text-white transition">Distributors</a></li>
                         <li><a href="#" class="hover:text-white transition">Suppliers</a></li>
@@ -349,7 +334,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold text-white uppercase tracking-wider mb-6 text-xs">Support</h4>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-8 text-xs">Support</h4>
                     <ul class="space-y-4">
                         <li><a href="#contact" class="hover:text-white transition">Contact Us</a></li>
                         <li><a href="#" class="hover:text-white transition">FAQ</a></li>
@@ -357,7 +342,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold text-white uppercase tracking-wider mb-6 text-xs">Legal</h4>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-8 text-xs">Legal</h4>
                     <ul class="space-y-4">
                         <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
                         <li><a href="#" class="hover:text-white transition">Terms of Use</a></li>
@@ -370,7 +355,7 @@
                 <p>&copy; 2026 Viv-Elion Beverages. All Rights Reserved. | Village Sangrana, Punjab.</p>
             </div>
         </div>
-    </section>
+    </footer>
 
     <a href="https://wa.me/917986815060" class="fixed bottom-8 right-8 bg-[#25d366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition z-50">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
@@ -386,4 +371,3 @@
     </script>
 </body>
 </html>
-
