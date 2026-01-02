@@ -45,7 +45,7 @@
             overflow-x: hidden;
         }
 
-        /* --- 1. THE TURBO AURORA ENGINE (Background) --- */
+        /* --- 1. THE TURBO AURORA ENGINE --- */
         .aurora-container {
             position: fixed;
             top: 0;
@@ -65,7 +65,6 @@
             animation: floatFast 12s infinite ease-in-out alternate;
         }
 
-        /* Intense Navy/Gold Mixing */
         .blob-1 { top: -10%; left: -10%; width: 70vw; height: 70vw; background: #1e3a8a; animation-duration: 15s; }
         .blob-2 { bottom: -10%; right: -10%; width: 70vw; height: 70vw; background: #000000; animation-duration: 18s; animation-delay: -5s; }
         .blob-3 { top: 40%; left: 30%; width: 50vw; height: 50vw; background: #d4af37; opacity: 0.2; animation-duration: 10s; animation-delay: -8s; }
@@ -77,7 +76,8 @@
             100% { transform: translate(-40px, 60px) scale(0.9) rotate(-5deg); }
         }
 
-        /* --- 2. ULTRA GLASS PANELS --- */
+        /* --- 2. GLASS STYLES --- */
+        /* This class defines the Border + Blur + Background */
         .glass-panel {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
@@ -86,17 +86,18 @@
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
 
+        /* Used for Cards */
         .glass-card {
             @apply glass-panel transition-all duration-300;
         }
         .glass-card:hover {
             background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(212, 175, 55, 0.5); /* Gold Border on Hover */
+            border-color: rgba(212, 175, 55, 0.5);
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
-
-        /* --- 3. FOOTER SPLASH (The "Coca-Cola" Footer Glow) --- */
+        
+        /* Footer Glow */
         .footer-glow {
             background: radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.3) 0%, transparent 60%);
             position: absolute;
@@ -117,7 +118,7 @@
         <div class="blob blob-4"></div>
     </div>
 
-    <nav class="fixed w-full z-50 transition-all duration-300 glass-panel border-x-0 border-t-0">
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 border-b border-transparent">
         <div class="container mx-auto px-6 h-24 flex justify-between items-center">
             <a href="#" class="flex flex-col group">
                 <span class="text-3xl font-serif font-black text-white tracking-widest drop-shadow-md group-hover:text-brand-gold transition">VIV-ELION</span>
@@ -364,10 +365,25 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ once: true, offset: 100 });
+        
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         }
+
+        // --- SCROLL ENGINE (Added to toggle the Border/Glass) ---
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                // User Scrolled Down: Show Border & Glass
+                navbar.classList.add('glass-panel', 'border-white/10');
+                navbar.classList.remove('border-transparent');
+            } else {
+                // User at Top: Remove Border & Glass
+                navbar.classList.remove('glass-panel', 'border-white/10');
+                navbar.classList.add('border-transparent');
+            }
+        });
     </script>
 </body>
 </html>
