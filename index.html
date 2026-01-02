@@ -41,46 +41,78 @@
     <style>
         body { 
             font-family: 'Montserrat', sans-serif;
-            /* THE LIVING BACKGROUND ENGINE */
-            background: linear-gradient(-45deg, #020c1b, #0a192f, #112240, #0a192f);
-            background-size: 400% 400%;
-            animation: gradientBG 20s ease infinite;
-            color: #e2e8f0; /* Default light text */
+            color: #e2e8f0;
             overflow-x: hidden;
+            background-color: #0a192f; /* Fallback */
         }
 
-        @keyframes gradientBG {
+        /* --- THE COCA-COLA STYLE "AURORA" ENGINE (NAVY/GOLD EDITION) --- */
+        .aurora-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* This mimics the exact fluid movement of the Coca-Cola site */
+            background: 
+                radial-gradient(at 0% 0%, #0a192f 0px, transparent 50%),
+                radial-gradient(at 100% 0%, #1e3a8a 0px, transparent 50%),
+                radial-gradient(at 100% 100%, #312e81 0px, transparent 50%),
+                radial-gradient(at 0% 100%, #0f172a 0px, transparent 50%),
+                radial-gradient(at 50% 50%, #0a192f 0px, transparent 50%);
+            background-size: 200% 200%;
+            animation: aurora 20s ease infinite;
+        }
+
+        /* The Moving "Blobs" of Gold and Blue */
+        .aurora-blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+            animation: float 25s infinite alternate;
+        }
+        .blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: #1e3a8a; animation-delay: 0s; }
+        .blob-2 { bottom: -10%; right: -10%; width: 50vw; height: 50vw; background: #0f172a; animation-delay: -5s; }
+        .blob-3 { top: 30%; left: 40%; width: 40vw; height: 40vw; background: #d4af37; opacity: 0.15; animation-delay: -10s; } /* Gold Highlight */
+
+        @keyframes aurora {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(30px, 50px) scale(1.1); }
+        }
         
-        /* --- THE DIAMOND GLASS EFFECT --- */
+        /* --- DIAMOND GLASS PANES --- */
         .glass-pane {
-            background: rgba(255, 255, 255, 0.03); /* Very subtle fill */
-            backdrop-filter: blur(16px); /* Heavy blur for depth */
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08); /* Thin crisp edge */
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); /* Floating shadow */
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
         }
 
-        /* Interactive Glass Cards (Products etc.) */
         .glass-interactive {
             @apply glass-pane transition-all duration-500;
         }
         .glass-interactive:hover {
-            background: rgba(255, 255, 255, 0.07); /* Slightly brighter on hover */
-            border-color: rgba(212, 175, 55, 0.4); /* Gold hint on hover */
-            transform: translateY(-8px); /* Float higher */
-            box-shadow: 0 15px 40px -5px rgba(10, 25, 47, 0.4);
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(212, 175, 55, 0.4); /* Gold Border on Hover */
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.4);
         }
 
-        /* Featured Glass Card (Middle Product) */
+        /* FEATURED CARD: Deep Blue Tint */
         .glass-featured {
-            background: rgba(10, 25, 47, 0.4); /* Slightly deeper navy tint */
+            background: rgba(10, 25, 47, 0.6);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(212, 175, 55, 0.3); /* Gold border base */
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .hero-zoom { animation: zoomIn 25s infinite alternate; }
@@ -108,7 +140,10 @@
 </head>
 <body class="antialiased">
 
-    <nav class="fixed w-full z-50 transition-all duration-300 glass-pane border-x-0 border-t-0">
+    <div class="aurora-bg"></div>
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="aurora-blob blob-3"></div> <nav class="fixed w-full z-50 transition-all duration-300 glass-pane border-x-0 border-t-0">
         <div class="container mx-auto px-6 h-20 flex justify-between items-center">
             
             <a href="#" class="flex flex-col group">
@@ -138,7 +173,7 @@
     <header class="relative h-screen overflow-hidden flex items-center justify-center">
         <div class="absolute inset-0 bg-brand-navy/20 z-10 mix-blend-overlay"></div>
         <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=2560&auto=format&fit=crop" 
-                 class="w-full h-full object-cover opacity-30 hero-zoom absolute inset-0" alt="Pure Water">
+                 class="w-full h-full object-cover opacity-20 hero-zoom absolute inset-0 mix-blend-soft-light" alt="Pure Water">
 
         <div class="relative z-20 text-center px-4 max-w-5xl mx-auto" data-aos="fade-up" data-aos-duration="1500">
             <div class="inline-block glass-pane px-6 py-2 mb-8 rounded-full border-brand-gold/30">
@@ -284,7 +319,7 @@
         </div>
     </section>
 
-    <section id="contact" class="glass-pane border-x-0 border-b-0 pt-20 pb-10 font-sans text-sm mt-20 backdrop-blur-2xl bg-brand-navy/40">
+    <section id="contact" class="glass-pane border-x-0 border-b-0 pt-20 pb-10 font-sans text-sm mt-20 backdrop-blur-2xl bg-brand-navy/60">
         <div class="container mx-auto px-6">
             
             <div class="flex flex-col md:flex-row justify-between items-start mb-16 border-b border-white/10 pb-10">
@@ -347,7 +382,7 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ once: true, offset: 100, duration: 800 });
+        AOS.init({ once: true, offset: 100 });
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
