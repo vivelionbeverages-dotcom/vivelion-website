@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viv-Elion | The Future of Hydration</title>
     <meta name="description" content="Viv-Elion Beverages: Manufacturing premium mineral water with world-class automation. Sustainability, Purity, and Innovation in every drop.">
-<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/vivelionbeverages-dotcom/vivelion-website/main/logo.png">
-
-<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/vivelionbeverages-dotcom/vivelion-website/main/logo.png">
-
-<link rel="shortcut icon" href="https://raw.githubusercontent.com/vivelionbeverages-dotcom/vivelion-website/main/logo.png">
+    
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/vivelionbeverages-dotcom/vivelion-website/main/logo.png">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/vivelionbeverages-dotcom/vivelion-website/main/logo.png">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/vivelionbeverages-dotcom/vivelion-website/main/logo.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -18,7 +17,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <script>
@@ -31,6 +29,7 @@
                             gold: '#d4af37',  /* Premium Gold */
                             dark: '#111111',  /* Near Black for Footer */
                             gray: '#f4f4f4',  /* Light Background */
+                            white: '#ffffff',
                         }
                     },
                     fontFamily: {
@@ -42,7 +41,15 @@
         }
     </script>
     <style>
-        body { font-family: 'Montserrat', sans-serif; }
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            /* THE MAGIC LINE: Smoothly transition background color over 0.7 seconds */
+            transition: background-color 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        /* Nav text must also transition smoothly */
+        .nav-link { transition: color 0.5s ease; }
+        
         .hero-zoom { animation: zoomIn 20s infinite alternate; }
         @keyframes zoomIn { from { transform: scale(1); } to { transform: scale(1.1); } }
     </style>
@@ -66,25 +73,25 @@
     }
     </script>
 </head>
-<body class="bg-white text-slate-900 antialiased">
+<body class="bg-brand-navy text-slate-900 antialiased" id="body-bg">
 
-    <nav class="fixed w-full z-50 bg-white border-b border-gray-100 shadow-sm transition-all duration-300">
+    <nav id="navbar" class="fixed w-full z-50 bg-transparent border-b border-white/10 transition-all duration-500">
         <div class="container mx-auto px-6 h-20 flex justify-between items-center">
             
             <a href="#" class="flex flex-col group">
-                <span class="text-2xl font-serif font-black text-brand-navy tracking-widest group-hover:text-brand-gold transition">VIV-ELION</span>
-                <span class="text-[9px] uppercase tracking-[0.4em] text-slate-400 font-bold">Beverage Company</span>
+                <span id="logo-text" class="text-2xl font-serif font-black text-white tracking-widest group-hover:text-brand-gold transition">VIV-ELION</span>
+                <span class="text-[9px] uppercase tracking-[0.4em] text-white/60 font-bold">Beverage Company</span>
             </a>
 
-            <div class="hidden md:flex space-x-12 font-bold text-xs uppercase tracking-widest text-brand-navy items-center">
-                <a href="#" class="hover:text-brand-gold transition py-6 border-b-2 border-transparent hover:border-brand-gold">Our Company</a>
-                <a href="#brands" class="hover:text-brand-gold transition py-6 border-b-2 border-transparent hover:border-brand-gold">Brands</a>
-                <a href="#sustainability" class="hover:text-brand-gold transition py-6 border-b-2 border-transparent hover:border-brand-gold">Sustainability</a>
-                <a href="distributors.html" class="hover:text-brand-gold transition py-6 border-b-2 border-transparent hover:border-brand-gold">Partner With Us</a>
-                <a href="#contact" class="bg-brand-navy text-white px-8 py-3 rounded-full hover:bg-brand-gold hover:text-brand-navy transition shadow-lg">Contact</a>
+            <div class="hidden md:flex space-x-12 font-bold text-xs uppercase tracking-widest text-white items-center" id="nav-links">
+                <a href="#" class="nav-link hover:text-brand-gold py-6 border-b-2 border-transparent hover:border-brand-gold">Our Company</a>
+                <a href="#brands" class="nav-link hover:text-brand-gold py-6 border-b-2 border-transparent hover:border-brand-gold">Brands</a>
+                <a href="#sustainability" class="nav-link hover:text-brand-gold py-6 border-b-2 border-transparent hover:border-brand-gold">Sustainability</a>
+                <a href="distributors.html" class="nav-link hover:text-brand-gold py-6 border-b-2 border-transparent hover:border-brand-gold">Partner With Us</a>
+                <a href="#contact" class="bg-brand-gold text-brand-navy px-8 py-3 rounded-full hover:bg-white transition shadow-lg">Contact</a>
             </div>
 
-            <button onclick="toggleMenu()" class="md:hidden text-2xl text-brand-navy"><i class="fa-solid fa-bars-staggered"></i></button>
+            <button onclick="toggleMenu()" class="md:hidden text-2xl text-white"><i class="fa-solid fa-bars-staggered"></i></button>
         </div>
 
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0">
@@ -95,9 +102,10 @@
         </div>
     </nav>
 
-    <header class="relative h-screen overflow-hidden flex items-center justify-center">
+    <header data-color="navy" class="color-trigger relative h-screen overflow-hidden flex items-center justify-center">
         <div class="absolute inset-0 bg-brand-navy">
-            <div class="absolute inset-0 bg-black/40 z-10"></div> <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=2560&auto=format&fit=crop" 
+            <div class="absolute inset-0 bg-black/40 z-10"></div>
+            <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=2560&auto=format&fit=crop" 
                  class="w-full h-full object-cover opacity-80 hero-zoom" alt="Pure Water">
         </div>
 
@@ -126,7 +134,7 @@
         </div>
     </header>
 
-    <div class="bg-brand-navy text-white py-12 border-b border-slate-800">
+    <div class="bg-transparent text-white py-12 border-b border-white/10 relative z-30">
         <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-slate-700">
             <div data-aos="fade-up" data-aos-delay="0">
                 <h3 class="text-4xl font-serif text-brand-gold mb-2">100%</h3>
@@ -147,7 +155,7 @@
         </div>
     </div>
 
-    <section id="brands" class="py-24 bg-brand-gray">
+    <section id="brands" data-color="white" class="color-trigger py-32">
         <div class="container mx-auto px-6">
             <div class="text-center mb-20">
                 <span class="text-brand-navy font-bold tracking-[0.2em] uppercase text-sm">Our Portfolio</span>
@@ -156,9 +164,9 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-12">
-                <div class="group bg-white p-8 shadow-xl hover:-translate-y-3 transition duration-500 rounded-lg text-center border-t-4 border-transparent hover:border-brand-gold">
+                <div class="group bg-slate-50 p-8 shadow-xl hover:-translate-y-3 transition duration-500 rounded-lg text-center border-t-4 border-transparent hover:border-brand-gold">
                     <div class="h-64 flex items-center justify-center mb-6 overflow-hidden">
-                        <div class="w-32 h-56 bg-slate-100 rounded-full flex items-center justify-center text-slate-300 text-4xl group-hover:bg-brand-ice transition">
+                        <div class="w-32 h-56 bg-white rounded-full flex items-center justify-center text-slate-300 text-4xl group-hover:bg-blue-50 group-hover:text-blue-200 transition">
                             <i class="fa-solid fa-bottle-water"></i>
                         </div>
                     </div>
@@ -179,9 +187,9 @@
                     <p class="text-slate-300 text-sm leading-relaxed mb-6">Your daily travel partner. Ergonomically designed for grip and hydration on the go.</p>
                 </div>
 
-                <div class="group bg-white p-8 shadow-xl hover:-translate-y-3 transition duration-500 rounded-lg text-center border-t-4 border-transparent hover:border-brand-gold">
+                <div class="group bg-slate-50 p-8 shadow-xl hover:-translate-y-3 transition duration-500 rounded-lg text-center border-t-4 border-transparent hover:border-brand-gold">
                     <div class="h-64 flex items-center justify-center mb-6 overflow-hidden">
-                        <div class="w-32 h-56 bg-slate-100 rounded-full flex items-center justify-center text-slate-300 text-4xl group-hover:bg-brand-ice transition">
+                        <div class="w-32 h-56 bg-white rounded-full flex items-center justify-center text-slate-300 text-4xl group-hover:bg-blue-50 group-hover:text-blue-200 transition">
                             <i class="fa-solid fa-bottle-water"></i>
                         </div>
                     </div>
@@ -193,40 +201,13 @@
         </div>
     </section>
 
-    <section id="sustainability" class="relative py-32 bg-brand-navy text-white overflow-hidden">
-        <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1621451537084-482c73073a0f?q=80&w=2874&auto=format&fit=crop')] bg-cover bg-center"></div>
-        <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-16">
-            <div class="md:w-1/2" data-aos="fade-right">
-                <span class="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Our Commitment</span>
-                <h2 class="text-4xl md:text-6xl font-serif font-bold leading-tight mb-8">Every Drop Counts. <br>Every Bottle Matters.</h2>
-                <p class="text-slate-300 text-lg leading-relaxed mb-8">
-                    At Viv-Elion, we don't just extract water; we respect it. We are committed to 100% recyclable packaging and sustainable groundwater practices in Sangrana.
-                </p>
-                <a href="#" class="text-brand-gold font-bold uppercase tracking-widest hover:text-white transition border-b border-brand-gold pb-1 inline-block">Read Our Sustainability Report &rarr;</a>
-            </div>
-            <div class="md:w-1/2" data-aos="fade-left">
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
-                        <i class="fa-solid fa-recycle text-4xl text-brand-gold mb-4"></i>
-                        <h4 class="font-bold text-xl mb-2">Recyclable</h4>
-                        <p class="text-sm text-slate-400">100% PET bottles designed for a circular economy.</p>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
-                        <i class="fa-solid fa-hand-holding-droplet text-4xl text-brand-gold mb-4"></i>
-                        <h4 class="font-bold text-xl mb-2">Preservation</h4>
-                        <p class="text-sm text-slate-400">Advanced rainwater harvesting at our plant.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-white">
+    <section class="color-trigger py-24 bg-transparent" data-color="white">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
             <div class="md:w-1/3 relative" data-aos="fade-up">
                 <div class="w-full h-[400px] bg-slate-200 shadow-2xl overflow-hidden relative">
-<img src="https://github.com/vivelionbeverages-dotcom/vivelion-website/blob/main/ceo-vishal.jpeg?raw=true" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700" alt="Vishal Kumar CEO">               
-                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-navy p-6 flex items-center justify-center shadow-lg">
+                    <img src="https://github.com/vivelionbeverages-dotcom/vivelion-website/blob/main/ceo-vishal.jpeg?raw=true" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700" alt="Vishal Kumar CEO">
+                </div>
+                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-navy p-6 flex items-center justify-center shadow-lg">
                    <i class="fa-solid fa-quote-right text-4xl text-brand-gold"></i>
                 </div>
             </div>
@@ -243,7 +224,35 @@
         </div>
     </section>
 
-    <footer class="bg-brand-dark text-white pt-20 pb-10 border-t border-gray-900 font-sans text-sm">
+    <section id="sustainability" data-color="navy" class="color-trigger relative py-32 text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2" data-aos="fade-right">
+                <span class="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Our Commitment</span>
+                <h2 class="text-4xl md:text-6xl font-serif font-bold leading-tight mb-8">Every Drop Counts. <br>Every Bottle Matters.</h2>
+                <p class="text-slate-300 text-lg leading-relaxed mb-8">
+                    At Viv-Elion, we don't just extract water; we respect it. We are committed to 100% recyclable packaging and sustainable groundwater practices in Sangrana.
+                </p>
+                <a href="#" class="text-brand-gold font-bold uppercase tracking-widest hover:text-white transition border-b border-brand-gold pb-1 inline-block">Read Our Sustainability Report &rarr;</a>
+            </div>
+            <div class="md:w-1/2" data-aos="fade-left">
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-white/10 backdrop-blur-sm p-8 border border-white/20 hover:bg-white/20 transition">
+                        <i class="fa-solid fa-recycle text-4xl text-brand-gold mb-4"></i>
+                        <h4 class="font-bold text-xl mb-2">Recyclable</h4>
+                        <p class="text-sm text-slate-400">100% PET bottles designed for a circular economy.</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-8 border border-white/20 hover:bg-white/20 transition">
+                        <i class="fa-solid fa-hand-holding-droplet text-4xl text-brand-gold mb-4"></i>
+                        <h4 class="font-bold text-xl mb-2">Preservation</h4>
+                        <p class="text-sm text-slate-400">Advanced rainwater harvesting at our plant.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" data-color="dark" class="color-trigger bg-transparent text-white pt-20 pb-10 font-sans text-sm">
         <div class="container mx-auto px-6">
             
             <div class="flex flex-col md:flex-row justify-between items-start mb-16 border-b border-gray-800 pb-10">
@@ -298,7 +307,7 @@
                 <p>&copy; 2026 Viv-Elion Beverages. All Rights Reserved. | Village Sangrana, Punjab.</p>
             </div>
         </div>
-    </footer>
+    </section>
 
     <a href="https://wa.me/917986815060" class="fixed bottom-8 right-8 bg-[#25d366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition z-50">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
@@ -307,10 +316,62 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ once: true, offset: 100 });
+
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         }
+
+        // --- THE DIAMOND STANDARD COLOR ENGINE ---
+        const body = document.getElementById('body-bg');
+        const sections = document.querySelectorAll('.color-trigger');
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const logoText = document.getElementById('logo-text');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('data-color');
+                }
+            });
+
+            // APPLY COLORS
+            if (current === 'white') {
+                body.style.backgroundColor = '#ffffff'; // White Background
+                
+                // Switch Nav to Dark Mode so it's visible on white
+                navbar.classList.add('bg-white/90', 'shadow-sm'); 
+                logoText.classList.remove('text-white');
+                logoText.classList.add('text-brand-navy');
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('text-white');
+                    link.classList.add('text-brand-navy');
+                });
+                
+            } else if (current === 'navy') {
+                body.style.backgroundColor = '#0a192f'; // Navy Background
+                
+                // Switch Nav to Light Mode
+                navbar.classList.remove('bg-white/90', 'shadow-sm');
+                logoText.classList.add('text-white');
+                logoText.classList.remove('text-brand-navy');
+                
+                navLinks.forEach(link => {
+                    link.classList.add('text-white');
+                    link.classList.remove('text-brand-navy');
+                });
+
+            } else if (current === 'dark') {
+                body.style.backgroundColor = '#050505'; // Near Black for Footer
+                // Nav stays light (since background is dark)
+            }
+        });
     </script>
 </body>
 </html>
