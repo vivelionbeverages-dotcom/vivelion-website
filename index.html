@@ -40,33 +40,50 @@
     <style>
         body { 
             font-family: 'Montserrat', sans-serif;
-            /* THE LIVE COLOR ENGINE */
-            transition: background-color 1s ease, color 0.5s ease;
+            background-color: #F40009; /* Fallback color */
+            overflow-x: hidden;
         }
 
-        /* 1. HERO GRADIENT (Coca-Cola Red Aurora) */
-        .bg-coke-gradient {
-            background: radial-gradient(circle at top left, #ff9a9e 0%, #F40009 50%, #990000 100%);
+        /* --- THE COCA-COLA STYLE "AURORA" ENGINE --- */
+        /* This creates the slow, moving mesh gradient effect */
+        .aurora-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(at 0% 0%, #F40009 0px, transparent 50%),
+                radial-gradient(at 100% 0%, #ff5e62 0px, transparent 50%),
+                radial-gradient(at 100% 100%, #990000 0px, transparent 50%),
+                radial-gradient(at 0% 100%, #ff9966 0px, transparent 50%),
+                radial-gradient(at 50% 50%, #F40009 0px, transparent 50%);
             background-size: 200% 200%;
-            animation: auroraMove 15s ease infinite;
+            animation: aurora 25s ease infinite;
         }
-        
-        @keyframes auroraMove {
+
+        /* Moving Color Blobs for that "Living" feel */
+        .aurora-blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+            opacity: 0.5;
+            animation: float 30s infinite alternate;
+        }
+        .blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: #ff5e62; animation-delay: 0s; }
+        .blob-2 { bottom: -10%; right: -10%; width: 50vw; height: 50vw; background: #990000; animation-delay: -5s; }
+        .blob-3 { top: 30%; left: 40%; width: 40vw; height: 40vw; background: #ff9966; opacity: 0.3; animation-delay: -10s; }
+
+        @keyframes aurora {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-
-        /* 2. WHITE MODE */
-        .bg-white-mode {
-            background-color: #ffffff;
-            color: #000000;
-        }
-
-        /* 3. BLACK MODE */
-        .bg-black-mode {
-            background-color: #000000;
-            color: #ffffff;
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(30px, 50px) scale(1.1); }
         }
 
         /* Glass Cards */
@@ -76,52 +93,37 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 8px 32px rgba(0,0,0,0.1);
         }
-        
-        /* Glass for White Background (Dark Glass) */
-        .glass-dark {
-            background: rgba(0, 0, 0, 0.05);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-zoom { animation: zoomIn 20s infinite alternate; }
-        @keyframes zoomIn { from { transform: scale(1); } to { transform: scale(1.1); } }
     </style>
 </head>
-<body id="body-bg" class="bg-coke-gradient text-white antialiased">
+<body class="text-white antialiased">
 
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 border-b border-transparent">
+    <div class="aurora-bg"></div>
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="aurora-blob blob-3"></div>
+
+    <nav class="fixed w-full z-50 border-b border-white/10 bg-coke-red/10 backdrop-blur-md">
         <div class="container mx-auto px-6 h-24 flex justify-between items-center">
-            
             <a href="#" class="flex flex-col group">
-                <span id="logo-text" class="text-3xl font-black tracking-tighter transition-colors">VIV-ELION</span>
+                <span class="text-3xl font-black tracking-tighter">VIV-ELION</span>
             </a>
-
-            <div class="hidden md:flex space-x-12 font-bold text-xs uppercase tracking-widest items-center" id="nav-links">
+            <div class="hidden md:flex space-x-12 font-bold text-xs uppercase tracking-widest items-center">
                 <a href="#" class="hover:opacity-70 transition">Our Company</a>
                 <a href="#brands" class="hover:opacity-70 transition">Brands</a>
                 <a href="#sustainability" class="hover:opacity-70 transition">Sustainability</a>
                 <a href="distributors.html" class="hover:opacity-70 transition">Partner With Us</a>
-                <a href="#contact" id="nav-btn" class="bg-black text-white px-8 py-3 rounded-full hover:bg-white hover:text-black transition shadow-lg">Contact</a>
+                <a href="#contact" class="bg-white text-coke-red px-8 py-3 rounded-full hover:bg-coke-dark hover:text-white transition shadow-lg">Contact</a>
             </div>
-
             <button onclick="toggleMenu()" class="md:hidden text-2xl"><i class="fa-solid fa-bars-staggered"></i></button>
         </div>
-
-        <div id="mobile-menu" class="hidden md:hidden bg-white absolute w-full left-0 top-24 shadow-xl">
-            <a href="#" class="block py-4 px-6 border-b border-gray-100 font-bold text-black">OUR COMPANY</a>
-            <a href="#brands" class="block py-4 px-6 border-b border-gray-100 font-bold text-black">BRANDS</a>
-            <a href="#sustainability" class="block py-4 px-6 border-b border-gray-100 font-bold text-black">SUSTAINABILITY</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-coke-red absolute w-full left-0 top-24 shadow-xl border-t border-white/10">
+            <a href="#" class="block py-4 px-6 border-b border-white/10 font-bold">OUR COMPANY</a>
+            <a href="#brands" class="block py-4 px-6 border-b border-white/10 font-bold">BRANDS</a>
+            <a href="#sustainability" class="block py-4 px-6 border-b border-white/10 font-bold">SUSTAINABILITY</a>
         </div>
     </nav>
 
-    <header class="color-trigger relative h-screen flex items-center justify-center overflow-hidden" data-color="red">
-        <div class="absolute inset-0 z-0">
-             <div class="absolute inset-0 bg-coke-red mix-blend-multiply opacity-80"></div>
-            <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=2560&auto=format&fit=crop" 
-                 class="w-full h-full object-cover opacity-40 hero-zoom" alt="Water">
-        </div>
-
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="relative z-20 text-center px-6 max-w-5xl mx-auto" data-aos="fade-up">
             <h1 class="text-6xl md:text-9xl font-black leading-none mb-6 drop-shadow-lg">
                 REFRESH<br>THE WORLD
@@ -130,7 +132,7 @@
                 Making a difference with every drop. Premium hydration from Sangrana to the world.
             </p>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="distributors.html" class="bg-white text-black px-10 py-4 rounded-full font-black uppercase tracking-wide hover:bg-black hover:text-white transition duration-300">
+                <a href="distributors.html" class="bg-white text-coke-red px-10 py-4 rounded-full font-black uppercase tracking-wide hover:bg-coke-dark hover:text-white transition duration-300 shadow-xl">
                     Discover Our Brands
                 </a>
                 <a href="#brands" class="glass-card px-10 py-4 rounded-full font-black uppercase tracking-wide hover:bg-white/20 transition duration-300">
@@ -140,102 +142,102 @@
         </div>
     </header>
 
-    <section id="brands" class="color-trigger py-32 transition-colors duration-700" data-color="white">
+    <section id="brands" class="py-32 relative z-10">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-6xl font-black mb-4">OUR BRANDS</h2>
-                <div class="w-20 h-2 bg-coke-red mx-auto"></div>
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="text-4xl md:text-6xl font-black mb-4 drop-shadow-lg">OUR BRANDS</h2>
+                <div class="w-20 h-2 bg-white mx-auto"></div>
             </div>
 
             <div class="grid md:grid-cols-3 gap-12">
-                <div class="group p-10 rounded-3xl bg-gray-50 hover:bg-white hover:shadow-2xl transition duration-500 text-center border border-gray-100">
-                    <div class="w-full h-64 bg-gray-200 rounded-2xl mb-8 flex items-center justify-center text-gray-400 text-5xl group-hover:bg-red-100 group-hover:text-red-600 transition">
+                <div class="group p-10 rounded-3xl glass-card hover:bg-white/20 transition duration-500 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-full h-64 bg-white/10 rounded-2xl mb-8 flex items-center justify-center text-white/50 text-5xl group-hover:text-white transition">
                         <i class="fa-solid fa-bottle-water"></i>
                     </div>
                     <h3 class="text-3xl font-black mb-2">Mini</h3>
-                    <p class="text-gray-500 font-bold text-sm tracking-widest mb-4">250ML HOSPITALITY</p>
+                    <p class="text-white/70 font-bold text-sm tracking-widest mb-4">250ML HOSPITALITY</p>
                 </div>
 
-                <div class="group p-10 rounded-3xl bg-black text-white shadow-2xl scale-105 transition duration-500 text-center relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-coke-red text-white text-xs font-bold px-4 py-2 uppercase">Best Seller</div>
-                    <div class="w-full h-64 bg-gray-800 rounded-2xl mb-8 flex items-center justify-center text-gray-500 text-5xl group-hover:text-white transition">
+                <div class="group p-10 rounded-3xl bg-coke-dark shadow-2xl scale-105 transition duration-500 text-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute top-0 right-0 bg-white text-coke-red text-xs font-bold px-4 py-2 uppercase">Best Seller</div>
+                    <div class="w-full h-64 bg-white/10 rounded-2xl mb-8 flex items-center justify-center text-white/50 text-5xl group-hover:text-white transition">
                         <i class="fa-solid fa-bottle-water"></i>
                     </div>
                     <h3 class="text-3xl font-black mb-2">Handy</h3>
-                    <p class="text-gray-400 font-bold text-sm tracking-widest mb-4">500ML ON-THE-GO</p>
+                    <p class="text-white/70 font-bold text-sm tracking-widest mb-4">500ML ON-THE-GO</p>
                 </div>
 
-                <div class="group p-10 rounded-3xl bg-gray-50 hover:bg-white hover:shadow-2xl transition duration-500 text-center border border-gray-100">
-                    <div class="w-full h-64 bg-gray-200 rounded-2xl mb-8 flex items-center justify-center text-gray-400 text-5xl group-hover:bg-red-100 group-hover:text-red-600 transition">
+                <div class="group p-10 rounded-3xl glass-card hover:bg-white/20 transition duration-500 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-full h-64 bg-white/10 rounded-2xl mb-8 flex items-center justify-center text-white/50 text-5xl group-hover:text-white transition">
                         <i class="fa-solid fa-bottle-water"></i>
                     </div>
                     <h3 class="text-3xl font-black mb-2">Home</h3>
-                    <p class="text-gray-500 font-bold text-sm tracking-widest mb-4">1L FAMILY PACK</p>
+                    <p class="text-white/70 font-bold text-sm tracking-widest mb-4">1L FAMILY PACK</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="color-trigger py-24 bg-transparent" data-color="white">
+    <section class="py-24 relative z-10">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
-            <div class="md:w-1/2 relative">
-                <div class="rounded-3xl overflow-hidden shadow-2xl">
-                    <img src="https://github.com/vivelionbeverages-dotcom/vivelion-website/blob/main/ceo-vishal.jpeg?raw=true" class="w-full object-cover transform hover:scale-105 transition duration-700" alt="Vishal Kumar CEO">
+            <div class="md:w-1/2 relative" data-aos="fade-right">
+                <div class="rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition duration-500 border-4 border-white/20">
+                    <img src="https://github.com/vivelionbeverages-dotcom/vivelion-website/blob/main/ceo-vishal.jpeg?raw=true" class="w-full object-cover" alt="Vishal Kumar CEO">
                 </div>
             </div>
-            <div class="md:w-1/2">
-                <h2 class="text-4xl font-black mb-8 leading-tight">"PURITY IS NOT A LUXURY.<br>IT IS A RIGHT."</h2>
-                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+            <div class="md:w-1/2" data-aos="fade-left">
+                <h2 class="text-4xl font-black mb-8 leading-tight drop-shadow-lg">"PURITY IS NOT A LUXURY.<br>IT IS A RIGHT."</h2>
+                <p class="text-xl text-white/80 mb-8 leading-relaxed">
                     We founded Viv-Elion with a single vision: to bring world-class hydration standards to Punjab. Every bottle that leaves our Sangrana plant is a promise of quality.
                 </p>
                 <div>
-                    <h4 class="text-2xl font-bold text-black">Mr. Vishal Kumar</h4>
-                    <p class="text-sm text-coke-red font-bold uppercase tracking-widest">Founder & CEO</p>
+                    <h4 class="text-2xl font-bold">Mr. Vishal Kumar</h4>
+                    <p class="text-sm text-white/70 font-bold uppercase tracking-widest">Founder & CEO</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sustainability" class="color-trigger py-32" data-color="black">
+    <section id="sustainability" class="py-32 relative z-10">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-16">
-                <div class="md:w-1/2">
-                    <span class="text-coke-red font-bold tracking-widest uppercase text-sm mb-4 block">Sustainability</span>
-                    <h2 class="text-5xl md:text-7xl font-black mb-8">WORLD WITHOUT WASTE</h2>
-                    <p class="text-gray-400 text-lg mb-8">
+                <div class="md:w-1/2" data-aos="fade-up">
+                    <span class="text-white/70 font-bold tracking-widest uppercase text-sm mb-4 block">Sustainability</span>
+                    <h2 class="text-5xl md:text-7xl font-black mb-8 drop-shadow-lg">WORLD WITHOUT WASTE</h2>
+                    <p class="text-white/80 text-lg mb-8">
                         We are redesigning the future of packaging. Our goal is to collect and recycle every bottle we sell by 2030.
                     </p>
-                    <a href="#" class="inline-block border-b-2 border-white pb-1 font-bold hover:text-coke-red hover:border-coke-red transition">Read Our Report</a>
+                    <a href="#" class="inline-block border-b-2 border-white pb-1 font-bold hover:opacity-70 transition">Read Our Report</a>
                 </div>
-                <div class="md:w-1/2 grid grid-cols-2 gap-6">
-                    <div class="bg-gray-900 p-8 rounded-2xl">
-                        <i class="fa-solid fa-recycle text-4xl text-white mb-4"></i>
+                <div class="md:w-1/2 grid grid-cols-2 gap-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass-card p-8 rounded-2xl text-center">
+                        <i class="fa-solid fa-recycle text-4xl mb-4"></i>
                         <h4 class="font-bold text-xl mb-2">100% Recyclable</h4>
-                        <p class="text-sm text-gray-500">Circular economy design.</p>
+                        <p class="text-sm text-white/70">Circular economy design.</p>
                     </div>
-                    <div class="bg-gray-900 p-8 rounded-2xl">
-                        <i class="fa-solid fa-water text-4xl text-white mb-4"></i>
+                    <div class="glass-card p-8 rounded-2xl text-center">
+                        <i class="fa-solid fa-water text-4xl mb-4"></i>
                         <h4 class="font-bold text-xl mb-2">Water Positive</h4>
-                        <p class="text-sm text-gray-500">Returning more than we use.</p>
+                        <p class="text-sm text-white/70">Returning more than we use.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="color-trigger bg-black text-white pt-20 pb-10 border-t border-gray-900" data-color="black">
+    <footer class="bg-coke-dark text-white pt-20 pb-10 relative z-10">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-start mb-16">
                 <div class="mb-8 md:mb-0">
                     <span class="text-3xl font-black tracking-tighter block mb-2">VIV-ELION</span>
                 </div>
                 <div class="flex gap-4">
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-white hover:text-black transition"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-white hover:text-black transition"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-white hover:text-black transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-coke-dark transition"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-coke-dark transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-coke-dark transition"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 text-sm text-gray-400">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 text-sm text-white/60">
                 <ul class="space-y-3">
                     <li><a href="#" class="hover:text-white">Our Company</a></li>
                     <li><a href="#" class="hover:text-white">Careers</a></li>
@@ -249,7 +251,7 @@
                     <li><a href="#" class="hover:text-white">Terms</a></li>
                 </ul>
             </div>
-            <div class="text-gray-600 text-xs">
+            <div class="text-white/40 text-xs">
                 &copy; 2026 Viv-Elion Beverages.
             </div>
         </div>
@@ -267,80 +269,6 @@
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         }
-
-        // --- THE LIVE COLOR ENGINE (Coke Edition) ---
-        const body = document.getElementById('body-bg');
-        const sections = document.querySelectorAll('.color-trigger');
-        const navbar = document.getElementById('navbar');
-        const navLinks = document.getElementById('nav-links');
-        const logoText = document.getElementById('logo-text');
-        const navBtn = document.getElementById('nav-btn');
-
-        window.addEventListener('scroll', () => {
-            let current = 'red'; // Default
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                    current = section.getAttribute('data-color');
-                }
-            });
-
-            // APPLY COKE THEME COLORS
-            if (current === 'white') {
-                body.classList.remove('bg-coke-gradient', 'bg-black-mode');
-                body.classList.add('bg-white-mode');
-                
-                // Nav turns White with Black Text
-                navbar.classList.add('bg-white', 'shadow-sm'); 
-                navbar.classList.remove('bg-transparent', 'border-transparent');
-                
-                logoText.classList.remove('text-white');
-                logoText.classList.add('text-black');
-                
-                navLinks.classList.remove('text-white');
-                navLinks.classList.add('text-black');
-                
-                navBtn.classList.remove('bg-white', 'text-black');
-                navBtn.classList.add('bg-black', 'text-white'); // Inverse button
-
-            } else if (current === 'black') {
-                body.classList.remove('bg-coke-gradient', 'bg-white-mode');
-                body.classList.add('bg-black-mode');
-                
-                // Nav turns Black/Dark
-                navbar.classList.add('bg-black');
-                navbar.classList.remove('bg-white', 'shadow-sm');
-
-                logoText.classList.remove('text-black');
-                logoText.classList.add('text-white');
-
-                navLinks.classList.remove('text-black');
-                navLinks.classList.add('text-white');
-                
-                navBtn.classList.remove('bg-black', 'text-white');
-                navBtn.classList.add('bg-white', 'text-black');
-
-            } else {
-                // RED GRADIENT (Default/Hero)
-                body.classList.add('bg-coke-gradient');
-                body.classList.remove('bg-white-mode', 'bg-black-mode');
-                
-                // Nav is Transparent White
-                navbar.classList.remove('bg-white', 'bg-black', 'shadow-sm');
-                navbar.classList.add('bg-transparent');
-
-                logoText.classList.remove('text-black');
-                logoText.classList.add('text-white');
-
-                navLinks.classList.remove('text-black');
-                navLinks.classList.add('text-white');
-
-                navBtn.classList.remove('bg-black', 'text-white');
-                navBtn.classList.add('bg-white', 'text-black');
-            }
-        });
     </script>
 </body>
 </html>
