@@ -6,15 +6,26 @@
     <title>Our Company | Viv-Elion</title>
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/vivelionbeverages-dotcom/vivelion-website/main/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
-    <script>tailwind.config = { theme: { extend: { colors: { brand: { navy: '#0a192f', gold: '#d4af37' } }, fontFamily: { sans: ['Montserrat'], serif: ['Cinzel'] } } } }</script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: { colors: { brand: { navy: '#0a192f', gold: '#d4af37' } }, fontFamily: { sans: ['Montserrat'], serif: ['Cinzel'] } }
+            }
+        }
+    </script>
     <style>body { font-family: 'Montserrat', sans-serif; background-color: #0a192f; color: white; }</style>
 </head>
 <body>
+
     <nav class="fixed w-full z-50 bg-[#0a192f] border-b border-white/10 h-24 flex items-center">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-serif font-black text-white tracking-widest">VIV-ELION</a>
-            <div class="hidden md:flex gap-8 font-bold text-xs uppercase tracking-widest">
+            <a href="index.html" class="flex flex-col group">
+                <span class="text-3xl font-serif font-black text-white tracking-widest hover:text-brand-gold transition">VIV-ELION</span>
+                <span class="text-[9px] uppercase tracking-[0.4em] text-slate-400 font-bold">Beverage Company</span>
+            </a>
+            <div class="hidden md:flex gap-8 font-bold text-xs uppercase tracking-widest text-slate-200">
                 <a href="index.html" class="hover:text-brand-gold transition">Home</a>
                 <a href="brands.html" class="hover:text-brand-gold transition">Brands</a>
                 <a href="distributors.html" class="bg-brand-gold text-brand-navy px-6 py-3 rounded-full hover:bg-white transition">Partner</a>
@@ -22,35 +33,134 @@
         </div>
     </nav>
 
-    <header class="pt-40 pb-20 px-6 text-center bg-gradient-to-b from-black to-[#0a192f]">
-        <span class="text-brand-gold font-bold tracking-[0.2em] text-sm uppercase">Who We Are</span>
-        <h1 class="text-5xl md:text-7xl font-serif font-black text-white mt-4 mb-8">PURITY WITH PURPOSE</h1>
+    <header class="pt-48 pb-32 px-6 text-center bg-gradient-to-b from-black to-[#0a192f] relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-brand-gold opacity-5 blur-[120px] rounded-full pointer-events-none"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <span class="text-brand-gold font-bold tracking-[0.3em] text-xs uppercase mb-4 block">Our Purpose</span>
+            <h1 class="text-5xl md:text-7xl font-serif font-black text-white mb-8 leading-tight">ENGINEERING THE<br>FUTURE OF PURITY</h1>
+            <p class="text-xl text-slate-300 leading-relaxed font-light">
+                Viv-Elion was born from a single, powerful belief: that the water we drink determines the life we live. We are not just manufacturing beverages; we are crafting the gold standard of hydration for a new generation.
+            </p>
+        </div>
     </header>
 
-    <section class="py-20 px-6 bg-white text-brand-navy">
-        <div class="container mx-auto flex flex-col md:flex-row gap-16">
-            <div class="md:w-1/3"><h2 class="text-4xl font-black mb-6">OUR HISTORY</h2><div class="w-20 h-2 bg-brand-gold mb-6"></div></div>
-            <div class="md:w-2/3 text-lg leading-loose space-y-6 text-slate-700">
-                <p>The story of Viv-Elion began in 2023 with a simple observation: pure, mineral-rich water was becoming a luxury rather than a necessity. Mr. Vishal Kumar founded the company with a mission to bridge the gap between international quality standards and local accessibility.</p>
-                <p>Starting with a state-of-the-art pilot facility in Village Sangrana, we spent months testing groundwater aquifers. We rejected standard filtration methods in favor of an <strong>8-stage purification protocol</strong> that rivals global giants.</p>
+    <section class="py-24 px-6 bg-white text-brand-navy">
+        <div class="container mx-auto flex flex-col md:flex-row gap-20">
+            <div class="md:w-1/3 sticky top-32 h-fit">
+                <span class="text-brand-gold font-bold tracking-[0.2em] text-xs uppercase mb-2 block">The Beginning</span>
+                <h2 class="text-5xl font-black mb-8">OUR ORIGIN<br>STORY</h2>
+                <div class="w-24 h-2 bg-brand-gold mb-8"></div>
+                <p class="font-serif italic text-2xl text-slate-400 leading-normal">
+                    "Great things have small beginnings, but they are built on giant ambitions."
+                </p>
+            </div>
+            
+            <div class="md:w-2/3 space-y-12 text-lg leading-loose text-slate-700">
+                <div>
+                    <h3 class="text-2xl font-bold text-brand-navy mb-4 flex items-center gap-4">
+                        <span class="text-brand-gold text-4xl font-serif">2025</span> The Vision Takes Shape
+                    </h3>
+                    <p>
+                        The journey of Viv-Elion began in early 2025. In a market flooded with generic brands and questionable quality, Mr. Vishal Kumar identified a critical gap. The consumers of Punjab deserved better than "just water." They deserved hydration that was chemically balanced, micro-filtered, and ethically produced. 
+                    </p>
+                    <p class="mt-4">
+                        Rejecting the shortcut of rebranding generic water, Mr. Kumar chose the harder path: building a facility from the ground up. He selected the village of <strong>Sangrana, Sri Muktsar Sahib</strong>, not by chance, but after extensive geological surveys revealed deep, protected aquifers ideal for mineral extraction.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-brand-navy mb-4 flex items-center gap-4">
+                        <span class="text-brand-gold text-4xl font-serif">The Build</span> Engineering Excellence
+                    </h3>
+                    <p>
+                        Construction of the Sangrana facility was driven by a philosophy of "Zero Compromise." We imported advanced filtration membranes and designed a proprietary <strong>8-Stage Purification Protocol</strong> that exceeds BIS standards.
+                    </p>
+                    <p class="mt-4">
+                        While other plants relied on manual labor for filling and capping—introducing the risk of human contamination—Viv-Elion invested in a fully automated, hands-free bottling line. This was a bold financial risk for a startup, but it was the only way to guarantee absolute purity.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-brand-navy mb-4 flex items-center gap-4">
+                        <span class="text-brand-gold text-4xl font-serif">Today</span> Setting the Standard
+                    </h3>
+                    <p>
+                        In less than a year, Viv-Elion has transformed from a daring idea into a household name in the region. Our "Blue & Gold" bottles have become a symbol of trust. We are not just a business; we are a community partner, creating local jobs in Sangrana and setting a new benchmark for environmental responsibility through our rainwater harvesting initiatives.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 px-6 bg-[#0a192f] text-white border-t border-white/10">
-        <div class="container mx-auto flex flex-col md:flex-row items-center gap-16">
-            <div class="md:w-1/3"><img src="https://github.com/vivelionbeverages-dotcom/vivelion-website/blob/main/ceo-vishal.jpeg?raw=true" class="rounded-xl shadow-2xl border-4 border-brand-gold/20"></div>
-            <div class="md:w-2/3">
-                <span class="text-brand-gold font-bold tracking-widest uppercase text-sm">Leadership</span>
-                <h2 class="text-4xl font-serif font-black mt-2 mb-6">VISHAL KUMAR</h2>
-                <p class="text-slate-400 text-sm uppercase tracking-widest font-bold mb-8">Founder & CEO</p>
-                <p class="text-slate-300 text-lg leading-relaxed">"We do not sell water; we sell trust. Every bottle that leaves our factory carries my personal guarantee of safety and purity."</p>
+    <section class="py-24 px-6 bg-[#05101c] border-t border-white/5">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-brand-gold font-bold tracking-[0.2em] text-xs uppercase">What Drives Us</span>
+                <h2 class="text-4xl font-serif font-bold text-white mt-4">CORE VALUES</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white/5 p-10 rounded-xl border border-white/10 hover:border-brand-gold/50 transition duration-500">
+                    <i class="fa-solid fa-gem text-4xl text-brand-gold mb-6"></i>
+                    <h3 class="text-xl font-bold text-white mb-4">The Diamond Standard</h3>
+                    <p class="text-slate-400 leading-relaxed">We don't aim for "acceptable." We aim for flawless. Every batch is tested in our in-house labs before it ever reaches a truck.</p>
+                </div>
+                <div class="bg-white/5 p-10 rounded-xl border border-white/10 hover:border-brand-gold/50 transition duration-500">
+                    <i class="fa-solid fa-microchip text-4xl text-brand-gold mb-6"></i>
+                    <h3 class="text-xl font-bold text-white mb-4">Innovation First</h3>
+                    <p class="text-slate-400 leading-relaxed">We embrace technology not to replace people, but to protect the product. Automation is our shield against contamination.</p>
+                </div>
+                <div class="bg-white/5 p-10 rounded-xl border border-white/10 hover:border-brand-gold/50 transition duration-500">
+                    <i class="fa-solid fa-hand-holding-heart text-4xl text-brand-gold mb-6"></i>
+                    <h3 class="text-xl font-bold text-white mb-4">Community Rooted</h3>
+                    <p class="text-slate-400 leading-relaxed">We grow where we are planted. Sangrana is not just our factory location; it is our home and our responsibility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-[#0a192f] text-white">
+        <div class="container mx-auto">
+            <div class="bg-gradient-to-r from-brand-navy to-[#05101c] rounded-3xl p-8 md:p-16 border border-white/10 shadow-2xl">
+                <div class="flex flex-col md:flex-row items-center gap-16">
+                    <div class="md:w-1/3 relative">
+                        <div class="absolute inset-0 bg-brand-gold blur-[50px] opacity-20"></div>
+                        <img src="https://github.com/vivelionbeverages-dotcom/vivelion-website/blob/main/ceo-vishal.jpeg?raw=true" class="relative rounded-2xl shadow-2xl border-4 border-white/10 w-full object-cover" alt="Vishal Kumar">
+                    </div>
+                    <div class="md:w-2/3">
+                        <span class="text-brand-gold font-bold tracking-widest uppercase text-sm mb-2 block">Leadership</span>
+                        <h2 class="text-5xl font-serif font-black text-white mb-2">VISHAL KUMAR</h2>
+                        <p class="text-slate-400 text-sm uppercase tracking-widest font-bold mb-8">Founder & Chief Executive Officer</p>
+                        
+                        <div class="space-y-6 text-slate-300 text-lg leading-relaxed">
+                            <p>
+                                Mr. Vishal Kumar represents a new wave of industrial leadership in India—one that combines technical precision with deep social consciousness. 
+                            </p>
+                            <p>
+                                When he established Viv-Elion in 2025, his goal was not merely to compete in the beverage market, but to disrupt it. He saw that the industry had become complacent, accepting mediocrity as the norm. He challenged this by implementing pharmaceutical-grade hygiene standards in a beverage facility.
+                            </p>
+                            <blockquote class="border-l-4 border-brand-gold pl-6 my-8 italic text-white text-xl">
+                                "We do not sell water; we sell trust. Every bottle that leaves our factory carries my personal guarantee of safety and purity."
+                            </blockquote>
+                            <p>
+                                Under his direct supervision, Viv-Elion has achieved 100% compliance with BIS regulations and is currently pursuing international ISO certifications to prepare for global export.
+                            </p>
+                        </div>
+                        
+                        <div class="mt-10 pt-8 border-t border-white/10">
+                            <a href="#" class="text-brand-gold font-bold uppercase tracking-widest hover:text-white transition">Read Letter from the CEO &rarr;</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <footer class="bg-black text-white pt-20 pb-10 text-center border-t border-white/10">
-        <p class="text-slate-500 text-xs mt-4 mb-8">&copy; 2026 Viv-Elion Beverages. All Rights Reserved.</p>
+        <span class="text-3xl font-serif font-black tracking-widest">VIV-ELION</span>
+        <p class="text-slate-500 text-xs mt-4 mb-8">&copy; 2026 Viv-Elion Beverages. All Rights Reserved. | Village Sangrana, Punjab.</p>
     </footer>
+
 </body>
 </html>
