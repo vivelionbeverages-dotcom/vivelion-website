@@ -1,19 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viv-Elion | The Future of Hydration</title>
     
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/vivelionbeverages-dotcom/vivelion-website/main/logo.png">
-    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/vivelionbeverages-dotcom/vivelion-website/main/logo.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Cinzel:wght@700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -22,151 +17,69 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            navy: '#0a192f',
-                            gold: '#d4af37',
-                            dark: '#020c1b',
-                        }
+                        brand: { navy: '#0a192f', gold: '#d4af37' }
                     },
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
-                        serif: ['Cinzel', 'serif'],
+                        serif: ['Cinzel', 'serif']
                     }
                 }
             }
         }
     </script>
     <style>
-        body { 
-            font-family: 'Montserrat', sans-serif;
-            background-color: #0a192f;
-            color: white;
-            overflow-x: hidden;
-        }
-
-        /* --- THE TURBO AURORA ENGINE --- */
-        .aurora-container {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-            background: #0a192f; overflow: hidden;
-        }
-        .blob {
-            position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.6;
-            animation: floatFast 15s infinite ease-in-out alternate;
-        }
-        .blob-1 { top: -10%; left: -10%; width: 70vw; height: 70vw; background: #1e3a8a; animation-duration: 12s; }
-        .blob-2 { bottom: -10%; right: -10%; width: 70vw; height: 70vw; background: #000000; animation-duration: 18s; animation-delay: -5s; }
-        .blob-3 { top: 40%; left: 30%; width: 40vw; height: 40vw; background: #d4af37; opacity: 0.2; animation-duration: 10s; animation-delay: -8s; }
-
-        @keyframes floatFast {
-            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
-            50% { transform: translate(30px, 20px) scale(1.1) rotate(5deg); }
-            100% { transform: translate(-30px, 50px) scale(0.9) rotate(-5deg); }
-        }
-
-        /* --- GLASS UI --- */
-        .glass-panel {
-            background: rgba(16, 30, 50, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-        }
+        body { font-family: 'Montserrat', sans-serif; background-color: #0a192f; color: white; overflow-x: hidden; }
         
-        .glass-card {
-            @apply glass-panel transition-all duration-300;
-        }
-        .glass-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(212, 175, 55, 0.5);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
+        /* AURORA ENGINE */
+        .aurora-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: #0a192f; }
+        .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.6; animation: float 15s infinite alternate; }
+        .blob-1 { top: -10%; left: -10%; width: 70vw; height: 70vw; background: #1e3a8a; }
+        .blob-2 { bottom: -10%; right: -10%; width: 70vw; height: 70vw; background: #000000; animation-delay: -5s; }
+        .blob-3 { top: 40%; left: 30%; width: 40vw; height: 40vw; background: #d4af37; opacity: 0.2; }
+        @keyframes float { 0% { transform: translate(0, 0); } 100% { transform: translate(30px, 50px); } }
 
-        /* --- MEGA MENU --- */
+        /* GLASS NAV */
+        .glass-panel { background: rgba(10, 25, 47, 0.95); backdrop-filter: blur(25px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        
+        /* MEGA MENU */
         .group:hover .mega-menu { opacity: 1; visibility: visible; transform: translateY(0); }
         .mega-menu { opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; }
-        
-        .footer-glow {
-            background: radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
-            position: absolute; bottom: 0; right: 0; width: 100%; height: 100%; pointer-events: none;
-        }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <div class="aurora-container">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
+    <div class="aurora-bg"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
 
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 glass-panel border-t-0 border-x-0 h-24 flex items-center">
+    <nav class="fixed w-full z-50 glass-panel h-24 flex items-center">
         <div class="container mx-auto px-6 flex justify-between items-center relative">
+            
             <a href="index.html" class="flex flex-col group z-50">
-                <span class="text-3xl font-serif font-black text-white tracking-widest drop-shadow-md group-hover:text-brand-gold transition">VIV-ELION</span>
-                <span class="text-[9px] uppercase tracking-[0.4em] text-slate-300 font-bold">Beverage Company</span>
+                <span class="text-3xl font-serif font-black text-white tracking-widest hover:text-brand-gold transition">VIV-ELION</span>
+                <span class="text-[9px] uppercase tracking-[0.4em] text-slate-400 font-bold">Beverage Company</span>
             </a>
 
-            <div class="hidden md:flex h-full items-center">
+            <div class="hidden md:flex h-full items-center gap-10 font-bold text-xs uppercase tracking-widest text-slate-200">
                 
                 <div class="group h-full flex items-center">
-                    <a href="about.html" class="px-5 py-6 text-xs font-bold uppercase tracking-widest text-slate-200 hover:text-brand-gold transition cursor-pointer">Our Company <i class="fa-solid fa-chevron-down ml-2 text-[8px] opacity-50"></i></a>
+                    <a href="about.html" class="py-8 hover:text-brand-gold transition cursor-pointer flex items-center gap-1">Our Company <i class="fa-solid fa-chevron-down text-[8px]"></i></a>
                     <div class="mega-menu absolute left-0 top-24 w-full glass-panel border-t border-white/10 p-12 shadow-2xl">
                         <div class="container mx-auto flex gap-12">
-                            <div class="w-1/3 border border-white/10 rounded-xl overflow-hidden relative">
-                                <img src="https://github.com/vivelionbeverages-dotcom/vivelion-website/blob/main/ceo-vishal.jpeg?raw=true" class="w-full h-full object-cover opacity-80" alt="CEO">
-                                <div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black to-transparent w-full">
-                                    <span class="text-brand-gold text-xs uppercase tracking-widest font-bold mb-1 block">Leadership</span>
-                                    <h4 class="text-xl font-serif font-bold text-white">Vishal Kumar</h4>
-                                </div>
-                            </div>
-                            <div class="w-2/3 grid grid-cols-3 gap-8">
-                                <div>
-                                    <h4 class="text-brand-gold font-bold uppercase tracking-widest text-xs mb-4 pb-2 border-b border-white/10">Who We Are</h4>
-                                    <ul class="space-y-3 text-sm text-slate-300">
-                                        <li><a href="about.html" class="hover:text-white transition block">Vision & Purpose</a></li>
-                                        <li><a href="about.html" class="hover:text-white transition block">History & Origins</a></li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="text-brand-gold font-bold uppercase tracking-widest text-xs mb-4 pb-2 border-b border-white/10">Operations</h4>
-                                    <ul class="space-y-3 text-sm text-slate-300">
-                                        <li><a href="about.html" class="hover:text-white transition block">Sangrana Plant</a></li>
-                                        <li><a href="about.html" class="hover:text-white transition block">Quality Assurance</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <div class="w-1/4"><h4 class="text-brand-gold mb-4 border-b border-white/10 pb-2">Who We Are</h4><ul class="space-y-3 text-sm normal-case tracking-normal text-slate-300"><li><a href="about.html" class="hover:text-white block">Vision & Purpose</a></li><li><a href="history.html" class="hover:text-white block">History</a></li></ul></div>
+                            <div class="w-1/4"><h4 class="text-brand-gold mb-4 border-b border-white/10 pb-2">Operations</h4><ul class="space-y-3 text-sm normal-case tracking-normal text-slate-300"><li><a href="about.html" class="hover:text-white block">Sangrana Plant</a></li><li><a href="sustainability.html" class="hover:text-white block">Sustainability</a></li></ul></div>
+                            <div class="w-1/2 border border-white/10 rounded-xl overflow-hidden relative h-48"><img src="https://github.com/vivelionbeverages-dotcom/vivelion-website/blob/main/ceo-vishal.jpeg?raw=true" class="w-full h-full object-cover opacity-60"><div class="absolute bottom-4 left-6"><span class="text-brand-gold text-xs">Leadership</span><h4 class="text-xl font-serif text-white">Vishal Kumar</h4></div></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="group h-full flex items-center">
-                    <a href="brands.html" class="px-5 py-6 text-xs font-bold uppercase tracking-widest text-slate-200 hover:text-brand-gold transition cursor-pointer">Brands <i class="fa-solid fa-chevron-down ml-2 text-[8px] opacity-50"></i></a>
-                    <div class="mega-menu absolute left-0 top-24 w-full glass-panel border-t border-white/10 p-12 shadow-2xl">
-                        <div class="container mx-auto grid grid-cols-3 gap-6">
-                            <a href="brands.html" class="block bg-white/5 p-6 rounded-lg hover:bg-white/10 transition text-center border border-white/5">
-                                <i class="fa-solid fa-bottle-water text-3xl text-brand-gold mb-3"></i>
-                                <h4 class="font-bold text-white">Mini (250ml)</h4>
-                                <p class="text-xs text-slate-400 mt-1">Hospitality</p>
-                            </a>
-                            <a href="brands.html" class="block bg-brand-gold/10 p-6 rounded-lg hover:bg-brand-gold/20 transition text-center border border-brand-gold/30">
-                                <i class="fa-solid fa-bottle-water text-3xl text-white mb-3"></i>
-                                <h4 class="font-bold text-white">Handy (500ml)</h4>
-                                <p class="text-xs text-brand-gold mt-1">Travel</p>
-                            </a>
-                            <a href="brands.html" class="block bg-white/5 p-6 rounded-lg hover:bg-white/10 transition text-center border border-white/5">
-                                <i class="fa-solid fa-bottle-water text-3xl text-brand-gold mb-3"></i>
-                                <h4 class="font-bold text-white">Pure (1L)</h4>
-                                <p class="text-xs text-slate-400 mt-1">Home</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <a href="brands.html" class="hover:text-brand-gold transition">Brand</a>
 
-                <a href="about.html" class="px-5 py-6 text-xs font-bold uppercase tracking-widest text-slate-200 hover:text-brand-gold transition">Process</a>
-                <div class="ml-8">
-                    <a href="distributors.html" class="glass-panel px-8 py-3 rounded-full text-brand-gold border-brand-gold/50 hover:bg-brand-gold hover:text-brand-navy transition shadow-lg text-xs font-bold uppercase tracking-widest">Partner With Us</a>
+                <a href="leadership.html" class="hover:text-brand-gold transition">Leadership</a>
+
+                <a href="media.html" class="hover:text-brand-gold transition">Media Center</a>
+
+                <div class="flex items-center gap-6 border-l border-white/20 pl-8 ml-4">
+                    <button class="hover:text-brand-gold transition"><i class="fa-solid fa-magnifying-glass text-lg"></i></button>
+                    <a href="about.html" class="hover:text-brand-gold transition"><i class="fa-solid fa-circle-info text-lg"></i></a>
                 </div>
             </div>
 
@@ -175,105 +88,70 @@
         
         <div id="mobile-menu" class="hidden md:hidden glass-panel border-x-0 absolute top-24 left-0 w-full">
             <a href="about.html" class="block p-4 border-b border-white/10 font-bold text-white">OUR COMPANY</a>
-            <a href="brands.html" class="block p-4 border-b border-white/10 font-bold text-white">BRANDS</a>
-            <a href="distributors.html" class="block p-4 bg-brand-gold text-brand-navy text-center font-bold">Partner</a>
+            <a href="brands.html" class="block p-4 border-b border-white/10 font-bold text-white">BRAND</a>
+            <a href="leadership.html" class="block p-4 border-b border-white/10 font-bold text-white">LEADERSHIP</a>
+            <a href="media.html" class="block p-4 border-b border-white/10 font-bold text-white">MEDIA CENTER</a>
         </div>
     </nav>
 
     <header class="h-screen flex items-center justify-center text-center px-4 relative z-10">
         <div data-aos="fade-up">
-            <div class="inline-block border border-brand-gold/50 px-6 py-2 rounded-full mb-8 backdrop-blur-md">
-                <span class="text-brand-gold font-bold tracking-[0.2em] text-xs">THE DIAMOND STANDARD</span>
-            </div>
-            <h1 class="text-6xl md:text-9xl font-serif font-black text-white mb-8 drop-shadow-2xl leading-none">
-                REFRESH <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-white">THE WORLD</span>
-            </h1>
+            <div class="inline-block border border-brand-gold/50 px-6 py-2 rounded-full mb-8 backdrop-blur-md"><span class="text-brand-gold font-bold tracking-[0.2em] text-xs">THE DIAMOND STANDARD</span></div>
+            <h1 class="text-6xl md:text-9xl font-serif font-black text-white mb-8 drop-shadow-2xl leading-none">REFRESH <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-white">THE WORLD</span></h1>
             <p class="text-xl text-slate-300 mb-12 max-w-2xl mx-auto">From Sangrana to the World. Purity engineered for life.</p>
             <div class="flex justify-center gap-6">
-                <a href="about.html" class="bg-brand-gold text-brand-navy px-10 py-4 font-bold tracking-widest hover:bg-white transition shadow-lg rounded">DISCOVER OUR STORY</a>
-                <a href="brands.html" class="glass-panel px-10 py-4 font-bold tracking-widest hover:bg-white/10 transition rounded border border-white/20">VIEW PRODUCTS</a>
+                <a href="about.html" class="bg-brand-gold text-brand-navy px-10 py-4 font-bold tracking-widest hover:bg-white transition shadow-lg rounded">OUR STORY</a>
+                <a href="brands.html" class="glass-panel px-10 py-4 font-bold tracking-widest hover:bg-white/10 transition rounded border border-white/20">PRODUCTS</a>
             </div>
         </div>
     </header>
 
-    <section class="py-24 relative z-10">
+    <footer class="bg-black text-white pt-24 pb-12 font-sans text-xs border-t border-white/10 relative z-20">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-16">
-                <div class="md:w-1/2" data-aos="fade-right">
-                    <span class="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Our Story</span>
-                    <h2 class="text-4xl md:text-6xl font-serif font-bold leading-tight mb-8 text-white">More Than Just Water.<br>A Legacy of Purity.</h2>
-                    <p class="text-slate-300 text-lg leading-relaxed mb-8">
-                        Viv-Elion Beverages was established with a singular, uncompromising vision: to redefine what "premium" means in the hydration industry. We utilize 8-stage purification to ensure every drop is perfect.
-                    </p>
-                    <a href="about.html" class="text-brand-gold font-bold uppercase tracking-widest border-b border-brand-gold pb-1 hover:text-white transition">Read Full History &rarr;</a>
-                </div>
-                <div class="md:w-1/2" data-aos="fade-left">
-                    <div class="glass-panel p-2 rounded-2xl rotate-2 hover:rotate-0 transition duration-500">
-                        <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=2560&auto=format&fit=crop" class="w-full rounded-xl opacity-90" alt="Factory">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 relative z-10">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white">Featured Products</h2>
-                <div class="w-24 h-1 bg-brand-gold mx-auto mt-6 mb-6"></div>
-                <a href="brands.html" class="text-slate-300 hover:text-brand-gold transition">See Full Catalog &rarr;</a>
-            </div>
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="glass-card p-10 rounded-2xl text-center">
-                    <div class="h-48 flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-bottle-water text-6xl text-slate-400"></i>
-                    </div>
-                    <h3 class="text-2xl font-serif font-bold text-white mb-2">Viv-Elion Mini</h3>
-                    <p class="text-brand-gold font-bold text-sm tracking-widest">250ML</p>
-                </div>
-                <div class="glass-card p-10 rounded-2xl scale-105 text-center bg-white/5 border-brand-gold/30">
-                    <div class="h-48 flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-bottle-water text-6xl text-white"></i>
-                    </div>
-                    <h3 class="text-3xl font-serif font-bold text-white mb-2">Viv-Elion Handy</h3>
-                    <p class="text-brand-gold font-bold text-sm tracking-widest">500ML</p>
-                </div>
-                <div class="glass-card p-10 rounded-2xl text-center">
-                    <div class="h-48 flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-bottle-water text-6xl text-slate-400"></i>
-                    </div>
-                    <h3 class="text-2xl font-serif font-bold text-white mb-2">Viv-Elion Pure</h3>
-                    <p class="text-brand-gold font-bold text-sm tracking-widest">1 LITRE</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-black text-white pt-24 pb-12 font-sans text-sm mt-20 relative overflow-hidden z-20">
-        <div class="footer-glow"></div>
-        <div class="container mx-auto px-6 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
-                <div class="col-span-2">
-                    <span class="text-4xl font-serif font-black tracking-widest block mb-2 text-white">VIV-ELION</span>
-                    <span class="text-xs text-slate-500 uppercase tracking-[0.4em]">The Beverage Company</span>
-                </div>
+                
                 <div>
-                    <h4 class="font-bold text-white uppercase tracking-wider mb-8 text-xs">Explore</h4>
+                    <span class="text-3xl font-serif font-black tracking-widest block mb-4 text-white">VIV-ELION</span>
+                    <div class="flex gap-4 mt-6">
+                        <a href="#" class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-6 text-[10px] text-brand-gold">ABOUT US</h4>
                     <ul class="space-y-4 text-slate-400">
-                        <li><a href="about.html" class="hover:text-white transition">Our Company</a></li>
-                        <li><a href="brands.html" class="hover:text-white transition">Brands</a></li>
-                        <li><a href="about.html" class="hover:text-white transition">Process</a></li>
+                        <li><a href="media.html" class="hover:text-white transition">Media Center</a></li>
+                        <li><a href="#" class="hover:text-white transition">The Viv-Elion Foundation</a></li>
+                        <li><a href="#" class="hover:text-white transition">Investors</a></li>
+                        <li><a href="#" class="hover:text-white transition">Policies and Practices</a></li>
+                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
                     </ul>
                 </div>
+
                 <div>
-                    <h4 class="font-bold text-white uppercase tracking-wider mb-8 text-xs">Connect</h4>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-6 text-[10px] text-brand-gold">NEED HELP?</h4>
                     <ul class="space-y-4 text-slate-400">
-                        <li><a href="distributors.html" class="hover:text-white transition">Partner With Us</a></li>
-                        <li><a href="https://linkedin.com/in/mr-vishal-kumar-002b323a1" class="hover:text-white transition">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-6 text-[10px] text-brand-gold">LEGAL</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Cookies Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Cookies Settings</a></li>
+                        <li><a href="#" class="hover:text-white transition">Notice at Collection</a></li>
+                        <li><a href="#" class="hover:text-white transition">Do Not Sell or Share My Personal Information</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="text-center md:text-right text-white text-xs opacity-80 pt-8 border-t border-white/10">
+
+            <div class="text-center md:text-right text-white text-[10px] opacity-60 border-t border-white/10 pt-8">
                 <p>&copy; 2026 Viv-Elion Beverages. All Rights Reserved. | Village Sangrana, Punjab.</p>
             </div>
         </div>
