@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Viv-Elion Foundation</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/vivelionbeverages-dotcom/vivelion-website/main/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>tailwind.config = { theme: { extend: { colors: { brand: { navy: '#0a192f', gold: '#d4af37' } }, fontFamily: { sans: ['Montserrat'], serif: ['Cinzel'] } } } }</script>
+    <style>body { font-family: 'Montserrat', sans-serif; background-color: #0a192f; color: white; }</style>
+</head>
+<body>
+    <nav class="fixed w-full z-50 bg-[#0a192f] border-b border-white/10 h-24 flex items-center">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-black text-white tracking-widest hover:text-brand-gold transition">VIV-ELION</a>
+            <div class="hidden md:flex gap-8 font-bold text-xs uppercase tracking-widest text-slate-200">
+                <a href="index.html" class="hover:text-brand-gold transition">Home</a>
+                <a href="about.html" class="hover:text-brand-gold transition">Our Company</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-40 pb-20 px-6 text-center bg-gradient-to-b from-black to-[#0a192f]">
+        <span class="text-brand-gold font-bold tracking-[0.2em] text-sm uppercase">Giving Back</span>
+        <h1 class="text-5xl md:text-7xl font-serif font-black text-white mt-4 mb-8">THE FOUNDATION</h1>
+        <p class="text-xl text-slate-300 max-w-3xl mx-auto">Empowering communities in Punjab through clean water initiatives and education.</p>
+    </header>
+
+    <section class="py-20 px-6 bg-white text-brand-navy">
+        <div class="container mx-auto flex flex-col md:flex-row gap-16">
+            <div class="md:w-1/3">
+                <h2 class="text-4xl font-black mb-6">OUR MISSION</h2>
+                <div class="w-20 h-2 bg-brand-gold mb-6"></div>
+            </div>
+            <div class="md:w-2/3 text-lg leading-loose space-y-6 text-slate-700">
+                <p>The Viv-Elion Foundation is the philanthropic arm of our company. We believe that businesses thrive only when their communities thrive.</p>
+                <p>We dedicate 2% of our annual profits to:</p>
+                <ul class="list-disc pl-6 space-y-2 font-bold">
+                    <li>Installing free clean water dispensers in rural schools.</li>
+                    <li>Supporting local farmers with sustainable irrigation education.</li>
+                    <li>Replenishing groundwater in Sangrana through advanced rainwater harvesting.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-black text-white pt-20 pb-10 text-center"><p class="text-slate-500 text-xs">&copy; 2026 Viv-Elion Beverages.</p></footer>
+</body>
+</html>
