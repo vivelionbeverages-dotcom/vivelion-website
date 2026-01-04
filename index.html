@@ -74,23 +74,21 @@
 
         /* --- 2. GLASS UI --- */
         .glass-panel {
-            background: rgba(16, 30, 50, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: rgba(16, 30, 50, 0.85); /* Slightly more opaque for readability */
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
         }
         
-        /* Transparent Nav Initial State */
         .nav-transparent {
             background: transparent;
             border-bottom: 1px solid transparent;
             backdrop-filter: none;
         }
         
-        /* Scrolled Nav State */
         .nav-scrolled {
-            background: rgba(10, 25, 47, 0.85);
+            background: rgba(10, 25, 47, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -145,7 +143,7 @@
                                 <div>
                                     <h4 class="text-brand-gold font-bold uppercase tracking-widest text-xs mb-4 pb-2 border-b border-white/10">Who We Are</h4>
                                     <ul class="space-y-3 text-sm text-slate-300">
-                                        <li><a href="#about" class="hover:text-white hover:translate-x-1 transition block">Our Purpose & Vision</a></li>
+                                        <li><a href="#vision" class="hover:text-white hover:translate-x-1 transition block">Purpose & Vision</a></li>
                                         <li><a href="#leadership" class="hover:text-white hover:translate-x-1 transition block">Executive Leadership</a></li>
                                         <li><a href="#history" class="hover:text-white hover:translate-x-1 transition block">History & Origins</a></li>
                                     </ul>
@@ -153,7 +151,7 @@
                                 <div>
                                     <h4 class="text-brand-gold font-bold uppercase tracking-widest text-xs mb-4 pb-2 border-b border-white/10">Operations</h4>
                                     <ul class="space-y-3 text-sm text-slate-300">
-                                        <li><a href="#process" class="hover:text-white hover:translate-x-1 transition block">Sangrana Plant</a></li>
+                                        <li><a href="#plant" class="hover:text-white hover:translate-x-1 transition block">Sangrana Facility</a></li>
                                         <li><a href="#quality" class="hover:text-white hover:translate-x-1 transition block">Quality Assurance</a></li>
                                         <li><a href="#sustainability" class="hover:text-white hover:translate-x-1 transition block">Sustainability Goals</a></li>
                                     </ul>
@@ -162,8 +160,7 @@
                                     <h4 class="text-brand-gold font-bold uppercase tracking-widest text-xs mb-4 pb-2 border-b border-white/10">Connect</h4>
                                     <ul class="space-y-3 text-sm text-slate-300">
                                         <li><a href="distributors.html" class="hover:text-white hover:translate-x-1 transition block">Distributor Portal</a></li>
-                                        <li><a href="#contact" class="hover:text-white hover:translate-x-1 transition block">Media Inquiries</a></li>
-                                        <li><a href="#careers" class="hover:text-white hover:translate-x-1 transition block">Careers</a></li>
+                                        <li><a href="#contact" class="hover:text-white hover:translate-x-1 transition block">Contact Us</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -186,18 +183,18 @@
                             
                             <div class="grid grid-cols-3 gap-6">
                                 <a href="#brands" class="group/card block bg-white/5 border border-white/5 hover:bg-white/10 hover:border-brand-gold/30 p-6 rounded-xl transition text-center">
-                                    <i class="fa-solid fa-bottle-water text-3xl text-brand-gold mb-3 group-hover/card:scale-110 transition"></i>
+                                    <i class="fa-solid fa-bottle-water text-3xl text-brand-gold mb-3 group-hover/item:scale-110 transition"></i>
                                     <h4 class="font-bold text-white">Viv-Elion Mini (250ml)</h4>
                                     <p class="text-xs text-slate-400 mt-1">The hospitality standard.</p>
                                 </a>
                                 <a href="#brands" class="group/card block bg-brand-gold/10 border border-brand-gold/30 p-6 rounded-xl hover:bg-brand-gold/20 transition text-center relative overflow-hidden">
                                     <div class="absolute top-2 right-2 text-[9px] bg-brand-gold text-brand-navy px-2 py-0.5 rounded font-bold uppercase">Best Seller</div>
-                                    <i class="fa-solid fa-bottle-water text-3xl text-white mb-3 group-hover/card:scale-110 transition"></i>
+                                    <i class="fa-solid fa-bottle-water text-3xl text-white mb-3 group-hover/item:scale-110 transition"></i>
                                     <h4 class="font-bold text-white">Viv-Elion Handy (500ml)</h4>
                                     <p class="text-xs text-brand-gold mt-1">On-the-go hydration.</p>
                                 </a>
                                 <a href="#brands" class="group/card block bg-white/5 border border-white/5 hover:bg-white/10 hover:border-brand-gold/30 p-6 rounded-xl transition text-center">
-                                    <i class="fa-solid fa-bottle-water text-3xl text-brand-gold mb-3 group-hover/card:scale-110 transition"></i>
+                                    <i class="fa-solid fa-bottle-water text-3xl text-brand-gold mb-3 group-hover/item:scale-110 transition"></i>
                                     <h4 class="font-bold text-white">Viv-Elion Pure (1L)</h4>
                                     <p class="text-xs text-slate-400 mt-1">For the modern home.</p>
                                 </a>
@@ -219,9 +216,8 @@
         
         <div id="mobile-menu" class="hidden md:hidden glass-panel border-x-0 absolute top-24 left-0 w-full max-h-[80vh] overflow-y-auto">
             <div class="p-6 space-y-4">
-                <a href="#about" class="block p-4 border-b border-white/10 font-bold text-white">Our Company</a>
-                <a href="#brands" class="block p-4 border-b border-white/10 font-bold text-white">Brands</a>
-                <a href="#process" class="block p-4 border-b border-white/10 font-bold text-white">Process</a>
+                <a href="#about" class="block p-4 border-b border-white/10 font-bold text-white hover:text-brand-gold">OUR COMPANY</a>
+                <a href="#brands" class="block p-4 border-b border-white/10 font-bold text-white hover:text-brand-gold">BRANDS</a>
                 <a href="distributors.html" class="block p-4 bg-brand-gold text-brand-navy text-center rounded font-bold">Partner With Us</a>
             </div>
         </div>
@@ -236,50 +232,53 @@
                 REFRESH <br> THE <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-100">WORLD</span>
             </h1>
             <p class="text-lg md:text-2xl text-slate-300 mb-12 font-light max-w-3xl mx-auto leading-relaxed drop-shadow-md">
-                Crafting the purest mineral water in Punjab with world-class automation and a commitment to life.
+                We are Viv-Elion. Born in Punjab, built for the world. We don't just bottle water; we bottle perfection, purity, and a promise of a better tomorrow.
             </p>
             <div class="flex flex-col md:flex-row gap-6 justify-center">
                 <a href="distributors.html" class="glass-panel bg-brand-gold text-brand-navy px-10 py-4 font-bold uppercase tracking-widest hover:bg-white transition duration-300 shadow-xl rounded-sm">
                     Become a Distributor
                 </a>
                 <a href="#brands" class="glass-panel text-white px-10 py-4 font-bold uppercase tracking-widest hover:bg-white/10 transition duration-300 rounded-sm">
-                    View Products
+                    Discover Products
                 </a>
             </div>
         </div>
     </header>
 
-    <section id="about" class="py-32 relative z-10">
+    <section id="vision" class="py-32 relative z-10">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-start gap-16">
-                <div class="md:w-1/2 sticky top-32" data-aos="fade-right">
-                    <span class="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Our Story</span>
-                    <h2 class="text-4xl md:text-6xl font-serif font-bold leading-tight mb-8 text-white">More Than Just Water.<br>A Legacy of Purity.</h2>
-                    <div class="glass-panel p-8 rounded-xl border-l-4 border-brand-gold">
-                        <p class="text-xl text-white italic mb-4">"We don't just bottle water; we bottle trust."</p>
-                        <p class="text-sm text-slate-400 uppercase tracking-widest">— Vishal Kumar, CEO</p>
-                    </div>
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Our Purpose</span>
+                <h2 class="text-4xl md:text-6xl font-serif font-bold leading-tight mb-8 text-white">To Refresh Punjab & <br>Inspire Moments of Optimism.</h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-12"></div>
+                <p class="text-slate-300 text-lg leading-relaxed mb-8">
+                    Water is the essence of life, but pure water is a privilege that we believe should be a right. Viv-Elion was not born in a boardroom; it was born from a desire to elevate the standard of hydration in our communities.
+                </p>
+                <p class="text-slate-300 text-lg leading-relaxed">
+                    Our vision goes beyond the bottle. We aim to create a sustainable ecosystem where manufacturing meets responsibility. Every liter we produce is a testament to our commitment to hygiene, health, and the environment. We are not just a water company; we are a life-sciences company dedicated to the well-being of every family in Punjab.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="history" class="py-32 relative z-10 bg-black/20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-16 items-center">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1597484661643-2f5fef640dd1?q=80&w=2579&auto=format&fit=crop" class="rounded-xl shadow-2xl border border-white/10 opacity-80" alt="History">
                 </div>
-                <div class="md:w-1/2 space-y-12 text-slate-300 text-lg leading-relaxed" data-aos="fade-left">
-                    <p>
-                        Viv-Elion Beverages was established in 2023 with a singular, uncompromising vision: to redefine what "premium" means in the hydration industry. Located in the pristine aquifers of <strong>Sangrana, Punjab</strong>, our facility is not just a factory—it is a sanctuary of technology and hygiene.
+                <div class="md:w-1/2">
+                    <span class="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Our Origins</span>
+                    <h2 class="text-4xl font-serif font-bold text-white mb-6">Born in 2023: The Sangrana Promise</h2>
+                    <p class="text-slate-300 leading-relaxed mb-6">
+                        The journey of Viv-Elion began in the historic village of Sangrana, Sri Muktsar Sahib. Recognizing the critical gap between local water supply and international quality standards, Mr. Vishal Kumar embarked on a mission to bridge this divide.
                     </p>
-                    <p>
-                        While others focus on volume, we focus on virtue. Every drop that enters our bottles has been filtered through <strong>8 stages of advanced purification</strong>, ensuring that when you open a Viv-Elion bottle, you are tasting water as nature intended it to be—untouched, pure, and life-giving.
+                    <p class="text-slate-300 leading-relaxed mb-6">
+                        Starting with a small but technologically advanced pilot plant, we focused intensely on R&D. We analyzed groundwater strata, tested filtration membranes, and collaborated with engineering experts to design a purification process that retains essential minerals while eliminating 99.99% of impurities.
                     </p>
-                    <p>
-                        Our automated bottling line ensures <strong>zero human contact</strong> from extraction to sealing. This is how we maintain the "Diamond Standard" of purity that our customers trust for their families.
+                    <p class="text-slate-300 leading-relaxed">
+                        Today, that pilot project has evolved into a fully automated industrial facility, serving thousands of retailers across the region.
                     </p>
-                    <div class="grid grid-cols-2 gap-6 mt-8">
-                        <div class="glass-panel p-6 rounded-lg text-center">
-                            <span class="text-3xl font-serif text-brand-gold font-bold block">100%</span>
-                            <span class="text-xs uppercase tracking-widest text-slate-400">Automated</span>
-                        </div>
-                        <div class="glass-panel p-6 rounded-lg text-center">
-                            <span class="text-3xl font-serif text-brand-gold font-bold block">BIS</span>
-                            <span class="text-xs uppercase tracking-widest text-slate-400">Certified</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -300,12 +299,148 @@
                         <h3 class="text-3xl font-serif font-bold text-white mb-2">Vishal Kumar</h3>
                         <p class="text-brand-gold text-sm uppercase tracking-widest font-bold mb-6">Founder & CEO</p>
                         <p class="text-slate-300 leading-relaxed mb-6">
-                            Under Mr. Kumar's leadership, Viv-Elion has grown from a local startup to a regional powerhouse in the beverage industry. His background in technology and operations has driven the adoption of world-class automation at our Sangrana plant.
+                            "True leadership is not about being in charge. It is about taking care of those in your charge."
+                        </p>
+                        <p class="text-slate-300 leading-relaxed mb-6">
+                            Mr. Vishal Kumar is the visionary behind Viv-Elion. With a background deeply rooted in operational excellence and digital marketing, he brings a unique blend of modern technology and traditional business ethics to the company. His relentless pursuit of "The Diamond Standard" has set Viv-Elion apart in a crowded market. He oversees all strategic initiatives, ensuring that the company's growth never compromises its core values of purity and integrity.
                         </p>
                         <a href="https://www.linkedin.com/in/mr-vishal-kumar-002b323a1" class="inline-flex items-center text-white hover:text-brand-gold transition gap-2 text-sm font-bold uppercase tracking-widest">
                             <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="plant" class="py-32 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-white">The Sangrana Facility</h2>
+                <p class="text-slate-400 mt-4">Where technology meets nature.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="glass-card p-10 rounded-xl">
+                    <h3 class="text-2xl font-bold text-white mb-4">Infrastructure</h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        Our plant is designed according to global HACCP (Hazard Analysis Critical Control Point) guidelines. The facility features epoxy-coated flooring to prevent dust accumulation, positive air pressure zones in the filling area, and advanced stainless steel (SS-316) piping for all water contact surfaces to ensure zero contamination.
+                    </p>
+                </div>
+                <div class="glass-card p-10 rounded-xl">
+                    <h3 class="text-2xl font-bold text-white mb-4">Production Capacity</h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        With a high-speed automated line capable of producing thousands of bottles per hour, we are equipped to meet the growing demand of Punjab. Our scalable infrastructure allows us to rapidly expand production for summer peaks without compromising on the 8-stage purification protocol.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quality" class="py-32 relative z-10 bg-black/20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-24" data-aos="fade-up">
+                <span class="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm">Quality Assurance</span>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mt-4">The 8-Stage Protocol</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-6 text-center">
+                <div class="glass-panel p-6 rounded-lg">
+                    <div class="text-brand-gold font-black text-4xl mb-2">01</div>
+                    <h4 class="text-white font-bold text-sm uppercase">Ozonation</h4>
+                    <p class="text-slate-400 text-xs mt-2">Kills bacteria instantly.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-lg">
+                    <div class="text-brand-gold font-black text-4xl mb-2">02</div>
+                    <h4 class="text-white font-bold text-sm uppercase">Sand Filtration</h4>
+                    <p class="text-slate-400 text-xs mt-2">Removes sediments.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-lg">
+                    <div class="text-brand-gold font-black text-4xl mb-2">03</div>
+                    <h4 class="text-white font-bold text-sm uppercase">Carbon Filter</h4>
+                    <p class="text-slate-400 text-xs mt-2">Removes odor & color.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-lg">
+                    <div class="text-brand-gold font-black text-4xl mb-2">04</div>
+                    <h4 class="text-white font-bold text-sm uppercase">Reverse Osmosis</h4>
+                    <p class="text-slate-400 text-xs mt-2">The core purification.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center max-w-2xl mx-auto">
+                <p class="text-slate-300 leading-relaxed">
+                    Following these steps, the water passes through Micron Filtration (05), UV Sterilization (06), and Final Ozonation (07) before automated filling (08). This rigorous process guarantees compliance with <strong>BIS (Bureau of Indian Standards)</strong> IS:14543 requirements.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="brands" class="py-32 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white">Our Product Portfolio</h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="glass-card p-10 rounded-2xl text-center group">
+                    <div class="h-64 flex items-center justify-center mb-6">
+                        <div class="w-32 h-56 glass-panel rounded-full flex items-center justify-center text-slate-400 text-4xl border-white/5 group-hover:bg-white/10 transition">
+                            <i class="fa-solid fa-bottle-water"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-2">Viv-Elion Mini</h3>
+                    <p class="text-brand-gold font-bold text-sm tracking-widest mb-6">250ML EDITION</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Compact and convenient. Perfect for corporate meetings, weddings, and hospitality events where a quick refreshment is needed without waste.</p>
+                </div>
+
+                <div class="glass-card p-10 rounded-2xl scale-105 text-center relative border-brand-gold/30 bg-white/5 group">
+                    <div class="absolute top-0 right-0 bg-brand-gold text-brand-navy text-xs font-bold px-4 py-2 uppercase tracking-widest rounded-bl-lg">Best Seller</div>
+                    <div class="h-64 flex items-center justify-center mb-6">
+                        <div class="w-32 h-56 glass-panel bg-white/10 rounded-full flex items-center justify-center text-white text-4xl border-white/20 group-hover:bg-white/20 transition">
+                            <i class="fa-solid fa-bottle-water"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-3xl font-serif font-bold text-white mb-2">Viv-Elion Handy</h3>
+                    <p class="text-brand-gold font-bold text-sm tracking-widest mb-6">500ML TRAVEL</p>
+                    <p class="text-slate-300 text-sm leading-relaxed">The universal standard. Ergonomically designed for grip, fitting perfectly in car holders and backpacks. Your daily hydration partner.</p>
+                </div>
+
+                <div class="glass-card p-10 rounded-2xl text-center group">
+                    <div class="h-64 flex items-center justify-center mb-6">
+                        <div class="w-32 h-56 glass-panel rounded-full flex items-center justify-center text-slate-400 text-4xl border-white/5 group-hover:bg-white/10 transition">
+                            <i class="fa-solid fa-bottle-water"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-2">Viv-Elion Pure</h3>
+                    <p class="text-brand-gold font-bold text-sm tracking-widest mb-6">1 LITRE HOME</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">For the dinner table. Ensuring your family stays hydrated with mineral-rich water throughout the day. The healthy choice for homes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sustainability" class="relative py-32 z-10 bg-black/30">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2">
+                <span class="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Environmental Responsibility</span>
+                <h2 class="text-4xl md:text-6xl font-serif font-bold leading-tight mb-8 text-white">World Without Waste.</h2>
+                <p class="text-slate-300 text-lg leading-relaxed mb-6">
+                    Our responsibility extends beyond the bottle. At Viv-Elion, we are pioneering a "Circular Economy" model in Punjab. We recognize that our planet's resources are finite, and we treat them with the respect they deserve.
+                </p>
+                <p class="text-slate-300 text-lg leading-relaxed mb-8">
+                    We have implemented advanced rainwater harvesting systems at our Sangrana plant to replenish the groundwater levels, returning more water to nature than we extract.
+                </p>
+            </div>
+            <div class="md:w-1/2 grid grid-cols-2 gap-6">
+                <div class="glass-card p-8 rounded-2xl text-center">
+                    <i class="fa-solid fa-recycle text-5xl text-brand-gold mb-6"></i>
+                    <h4 class="font-bold text-xl mb-2 text-white">Recyclable</h4>
+                    <p class="text-sm text-slate-300">100% PET bottles designed for reuse.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl text-center">
+                    <i class="fa-solid fa-hand-holding-droplet text-5xl text-brand-gold mb-6"></i>
+                    <h4 class="font-bold text-xl mb-2 text-white">Water Positive</h4>
+                    <p class="text-sm text-slate-300">Advanced aquifer recharge systems.</p>
                 </div>
             </div>
         </div>
@@ -320,7 +455,7 @@
                     <span class="text-xs text-slate-500 uppercase tracking-[0.4em]">The Beverage Company</span>
                 </div>
                 <div class="flex gap-4">
-                    <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition duration-300"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://twitter.com/VishalKumar_CEO" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition duration-300"><i class="fa-brands fa-x-twitter"></i></a>
                     <a href="https://linkedin.com/in/mr-vishal-kumar-002b323a1" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition duration-300"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="https://instagram.com/Vivelion.beverages" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition duration-300"><i class="fa-brands fa-instagram"></i></a>
                 </div>
@@ -339,21 +474,21 @@
                     <h4 class="font-bold text-white uppercase tracking-wider mb-8 text-xs">Business</h4>
                     <ul class="space-y-4">
                         <li><a href="distributors.html" class="hover:text-white transition">Distributors</a></li>
-                        <li><a href="#suppliers" class="hover:text-white transition">Suppliers</a></li>
+                        <li><a href="#plant" class="hover:text-white transition">Suppliers</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold text-white uppercase tracking-wider mb-8 text-xs">Support</h4>
                     <ul class="space-y-4">
                         <li><a href="#contact" class="hover:text-white transition">Contact Us</a></li>
-                        <li><a href="#faq" class="hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold text-white uppercase tracking-wider mb-8 text-xs">Legal</h4>
                     <ul class="space-y-4">
-                        <li><a href="#privacy" class="hover:text-white transition">Privacy Policy</a></li>
-                        <li><a href="#terms" class="hover:text-white transition">Terms of Use</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms of Use</a></li>
                     </ul>
                 </div>
             </div>
@@ -372,7 +507,7 @@
     <script>
         AOS.init({ once: true, offset: 100 });
         
-        // Scroll Engine for Navbar
+        // Navbar Scroll Effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
