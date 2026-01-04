@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leadership | Viv-Elion</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/vivelionbeverages-dotcom/vivelion-website/main/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>tailwind.config = { theme: { extend: { colors: { brand: { navy: '#0a192f', gold: '#d4af37' } }, fontFamily: { sans: ['Montserrat'], serif: ['Cinzel'] } } } }</script>
+    <style>body { font-family: 'Montserrat', sans-serif; background-color: #0a192f; color: white; }</style>
+</head>
+<body>
+    <nav class="fixed w-full z-50 bg-[#0a192f] border-b border-white/10 h-24 flex items-center">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-black text-white tracking-widest hover:text-brand-gold transition">VIV-ELION</a>
+            <div class="hidden md:flex gap-8 font-bold text-xs uppercase tracking-widest text-slate-200">
+                <a href="index.html" class="hover:text-brand-gold transition">Home</a>
+                <a href="about.html" class="hover:text-brand-gold transition">Our Company</a>
+            </div>
+        </div>
+    </nav>
 
+    <section class="pt-40 pb-20 px-6">
+        <div class="container mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/3">
+                <img src="https://github.com/vivelionbeverages-dotcom/vivelion-website/blob/main/ceo-vishal.jpeg?raw=true" class="rounded-xl shadow-2xl border-4 border-brand-gold/20">
+            </div>
+            <div class="md:w-2/3">
+                <span class="text-brand-gold font-bold tracking-widest uppercase text-sm">Founder & CEO</span>
+                <h1 class="text-5xl font-serif font-black mt-2 mb-6 text-white">VISHAL KUMAR</h1>
+                <p class="text-slate-300 text-lg leading-relaxed mb-6">"We do not sell water; we sell trust. Every bottle that leaves our factory carries my personal guarantee of safety and purity."</p>
+                <div class="h-1 w-20 bg-brand-gold mb-6"></div>
+                <p class="text-slate-400 leading-relaxed">Mr. Vishal Kumar combines technical expertise with a deep commitment to social responsibility. Under his leadership, Viv-Elion has achieved 100% BIS compliance and set new benchmarks for automation in Punjab's beverage industry.</p>
+                
+                <div class="mt-8">
+                    <a href="https://linkedin.com/in/mr-vishal-kumar-002b323a1" class="text-white hover:text-brand-gold transition flex items-center gap-2 font-bold uppercase text-xs tracking-widest"><i class="fa-brands fa-linkedin text-xl"></i> Follow on LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-black text-white pt-20 pb-10 text-center border-t border-white/10">
+        <p class="text-slate-500 text-xs">&copy; 2026 Viv-Elion Beverages.</p>
+    </footer>
+</body>
+</html>
