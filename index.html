@@ -1,251 +1,195 @@
-<section class="viv-hero-slider">
+<section class="hero-slider-container">
     
-    <div class="viv-slide active fade-in">
-        <div class="viv-content-wrapper">
-            <div class="viv-text-content">
-                <span class="viv-gold-badge">NOW LAUNCHING</span>
-                <h1>THE 1-LITRE <br> <span style="color: #d4af37;">REVOLUTION</span></h1>
-                <p>Introducing the new Pure-Grip™ bottle. Engineered for purity, crafted for life. 100% Recycled Plastic, 0% Compromise.</p>
-                <button class="viv-btn-primary">Explore Product &rarr;</button>
+    <div class="slide active fade">
+        <div class="slide-content">
+            <div class="text-side">
+                <span class="badge">NOW LAUNCHING</span>
+                <h1>THE 1-LITRE <br> REVOLUTION</h1>
+                <p>Introducing the new Pure-Grip™ bottle. 100% Recycled Plastic. 0% Compromise. Made right here in Sangrana.</p>
+                <button class="cta-btn">Explore Product &rarr;</button>
             </div>
-            <div class="viv-image-content">
-                <img src="https://placehold.co/500x800/0a1a3c/d4af37?text=Premium+Bottle+Shot" 
-                     alt="Viv-Elion Premium Water Bottle" 
-                     class="viv-product-img">
+            <div class="image-side">
+                <img src="bottle-image.jpg" alt="Premium Viv-Elion Water Bottle">
             </div>
         </div>
     </div>
 
-    <div class="viv-slide fade-in">
-        <div class="viv-content-wrapper">
-            <div class="viv-text-content">
-                <span class="viv-gold-badge">OUR PROMISE</span>
-                <h1>HYDRATION <br> <span style="color: #d4af37;">REIMAGINED</span></h1>
-                <p>Sourced from the pristine aquifers of Sangrana. Every drop is filtered for perfection and bottled with conscience.</p>
-                <button class="viv-btn-primary">Our Story &rarr;</button>
+    <div class="slide fade">
+        <div class="slide-content">
+            <div class="text-side">
+                <span class="badge">SUSTAINABILITY</span>
+                <h1>ENGINEERED <br> FOR PURITY</h1>
+                <p>Advanced filtration meets eco-friendly manufacturing. Taste the difference of responsible hydration.</p>
+                <button class="cta-btn">Our Process &rarr;</button>
             </div>
-            <div class="viv-image-content">
-                <img src="https://placehold.co/500x800/0a1a3c/d4af37?text=Premium+Bottle+Shot" 
-                     alt="Viv-Elion Sustainability" 
-                     class="viv-product-img">
+            <div class="image-side">
+                <img src="bottle-image.jpg" alt="Viv-Elion Purity">
             </div>
         </div>
     </div>
 
-    <div class="viv-slider-dots">
-        <span class="viv-dot active" onclick="setSlide(1)"></span>
-        <span class="viv-dot" onclick="setSlide(2)"></span>
+    <div class="dots-container">
+        <span class="dot active" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
     </div>
 
 </section>
 
 <style>
-    /* Main Container */
-    .viv-hero-slider {
+    .hero-slider-container {
         position: relative;
-        width: 100%;
-        max-width: 1300px;
-        margin: 2rem auto;
-        background: radial-gradient(circle at 70% 50%, #162b55 0%, #050e24 100%);
-        border-radius: 24px;
+        max-width: 1200px;
+        margin: 40px auto;
+        background: linear-gradient(135deg, #0a1a3c 0%, #132b5e 100%);
+        border-radius: 20px;
         overflow: hidden;
-        font-family: 'Times New Roman', serif; /* Or your brand font */
-        box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-        min-height: 500px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        font-family: 'Times New Roman', serif; /* Or your preferred font */
     }
 
-    /* Slide Structure */
-    .viv-slide {
+    .slide {
         display: none;
-        width: 100%;
-        height: 100%;
-        padding: 4rem;
-        box-sizing: border-box;
+        padding: 60px;
+        height: 400px; /* Adjust based on preference */
     }
 
-    .viv-slide.active {
+    .active {
         display: block;
     }
 
-    .viv-content-wrapper {
+    .slide-content {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 2rem;
+        height: 100%;
     }
 
-    /* Text Styling */
-    .viv-text-content {
-        flex: 1;
+    /* Text Side */
+    .text-side {
+        width: 50%;
         color: white;
-        z-index: 2;
     }
 
-    .viv-gold-badge {
-        background-color: #d4af37; /* Metallic Gold */
-        color: #050e24;
-        padding: 6px 12px;
-        font-weight: 800;
-        font-size: 0.85rem;
-        letter-spacing: 1px;
-        border-radius: 4px;
-        text-transform: uppercase;
-        font-family: sans-serif;
-    }
-
-    .viv-text-content h1 {
-        font-size: 3.5rem;
-        line-height: 1.1;
-        margin: 25px 0;
-        font-weight: 400;
-    }
-
-    .viv-text-content p {
-        font-family: sans-serif;
-        font-size: 1.1rem;
-        line-height: 1.6;
-        color: rgba(255,255,255,0.8);
-        max-width: 450px;
-        margin-bottom: 35px;
-    }
-
-    /* Button Styling */
-    .viv-btn-primary {
-        background: white;
-        color: #050e24;
-        padding: 14px 32px;
-        border-radius: 50px;
-        border: none;
+    .badge {
+        background: #b8860b; /* Gold */
+        color: #000;
+        padding: 5px 10px;
+        font-size: 0.8rem;
         font-weight: bold;
-        font-size: 1rem;
+        text-transform: uppercase;
+        border-radius: 4px;
+        font-family: sans-serif;
+    }
+
+    .text-side h1 {
+        font-size: 3rem;
+        margin: 20px 0;
+        line-height: 1.1;
+        font-family: serif; /* Matches your screenshot font style */
+    }
+
+    .text-side p {
+        font-family: sans-serif;
+        opacity: 0.9;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    .cta-btn {
+        padding: 12px 25px;
+        background: white;
+        color: #0a1a3c;
+        border: none;
+        border-radius: 30px;
+        font-weight: bold;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: transform 0.2s;
     }
 
-    .viv-btn-primary:hover {
-        background: #d4af37;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    .cta-btn:hover {
+        transform: scale(1.05);
     }
 
-    /* Image Styling */
-    .viv-image-content {
-        flex: 1;
+    /* Image Side */
+    .image-side {
+        width: 45%;
+        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        position: relative;
     }
 
-    .viv-product-img {
-        max-height: 450px;
-        width: auto;
-        /* Adds a realistic reflection/shadow below the bottle */
-        filter: drop-shadow(0 25px 25px rgba(0,0,0,0.6));
-        transform: scale(1);
-        transition: transform 6s ease;
+    .image-side img {
+        max-height: 120%; /* Allows bottle to pop out slightly if needed */
+        object-fit: contain;
+        filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5)); /* Adds depth */
     }
 
-    .active .viv-product-img {
-        transform: scale(1.05); /* Subtle zoom effect */
-    }
-
-    /* Navigation Dots */
-    .viv-slider-dots {
+    /* Dots */
+    .dots-container {
         position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 10px;
-        z-index: 10;
+        bottom: 20px;
+        width: 100%;
+        text-align: center;
     }
 
-    .viv-dot {
-        width: 12px;
-        height: 12px;
-        background: rgba(255,255,255,0.2);
-        border-radius: 50%;
+    .dot {
         cursor: pointer;
-        transition: background 0.3s;
+        height: 10px;
+        width: 10px;
+        margin: 0 5px;
+        background-color: rgba(255,255,255,0.3);
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
     }
 
-    .viv-dot.active {
-        background: #d4af37;
-        box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    .dot.active, .dot:hover {
+        background-color: white;
     }
 
-    /* Animations */
-    .fade-in {
-        animation: fadeIn 1s ease-in-out;
+    /* Animation */
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
     }
 
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-
-    /* Mobile Responsiveness */
-    @media (max-width: 768px) {
-        .viv-content-wrapper {
-            flex-direction: column-reverse;
-            text-align: center;
-        }
-        .viv-text-content p {
-            margin: 0 auto 30px auto;
-        }
-        .viv-slide {
-            padding: 2rem;
-        }
+    @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
     }
 </style>
 
 <script>
     let slideIndex = 1;
-    const slides = document.getElementsByClassName("viv-slide");
-    const dots = document.getElementsByClassName("viv-dot");
-    let slideTimer;
-
-    // Initialize
     showSlides(slideIndex);
-    startTimer();
 
-    // Direct navigation via dots
-    function setSlide(n) {
-        clearInterval(slideTimer); // Reset timer on manual click
+    // Auto-play feature
+    setInterval(function() {
+        plusSlides(1);
+    }, 5000); // Changes every 5 seconds
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
         showSlides(slideIndex = n);
-        startTimer(); // Restart timer
     }
 
-    // Auto-advance logic
-    function startTimer() {
-        slideTimer = setInterval(function() {
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1; }
-            showSlides(slideIndex);
-        }, 5000); // 5 Seconds
-    }
-
-    // Main display function
     function showSlides(n) {
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
-        
-        // Hide all slides
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-            slides[i].classList.remove("active");
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
         }
-        
-        // Deactivate all dots
-        for (let i = 0; i < dots.length; i++) {
-            dots[i].classList.remove("active");
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
         }
-        
-        // Show current slide and activate dot
-        slides[slideIndex-1].style.display = "block";
-        // Small delay to trigger CSS animation reflow
-        setTimeout(() => slides[slideIndex-1].classList.add("active"), 10);
-        dots[slideIndex-1].classList.add("active");
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
     }
 </script>
