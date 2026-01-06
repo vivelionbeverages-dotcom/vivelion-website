@@ -30,21 +30,13 @@
     <style>
         body { font-family: 'Montserrat', sans-serif; background-color: #0a192f; color: white; overflow-x: hidden; }
         
-        /* AURORA ENGINE */
+        /* AURORA ENGINE (Restored) */
         .aurora-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: #0a192f; }
         .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.6; animation: float 15s infinite alternate; }
         .blob-1 { top: -10%; left: -10%; width: 70vw; height: 70vw; background: #1e3a8a; }
         .blob-2 { bottom: -10%; right: -10%; width: 70vw; height: 70vw; background: #000000; animation-delay: -5s; }
         .blob-3 { top: 40%; left: 30%; width: 40vw; height: 40vw; background: #d4af37; opacity: 0.2; }
         @keyframes float { 0% { transform: translate(0, 0); } 100% { transform: translate(30px, 50px); } }
-
-        /* TICKER ANIMATION (NEW) */
-        .marquee-container { overflow: hidden; white-space: nowrap; position: relative; }
-        .marquee-content { display: inline-block; animation: scroll 30s linear infinite; }
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
 
         .glass-panel { background: rgba(10, 25, 47, 0.95); backdrop-filter: blur(25px); border-bottom: 1px solid rgba(255,255,255,0.1); }
         .group:hover .mega-menu { opacity: 1; visibility: visible; transform: translateY(0); }
@@ -96,9 +88,8 @@
         </div>
     </nav>
 
-    <header class="h-screen relative flex flex-col justify-center items-center overflow-hidden">
-        
-        <div class="container mx-auto px-6 relative z-10 text-center flex-grow flex flex-col justify-center" data-aos="fade-up" data-aos-duration="1500">
+    <header class="h-screen relative flex items-center justify-center overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10 text-center" data-aos="fade-up" data-aos-duration="1500">
             <h1 class="text-5xl md:text-8xl font-serif font-black text-white mb-6 leading-tight drop-shadow-2xl">
                 REFRESH <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-white">THE WORLD.</span>
             </h1>
@@ -110,23 +101,16 @@
                 <a href="brands.html" class="glass-panel px-10 py-4 font-bold tracking-[0.2em] rounded hover:bg-white/10 transition border border-white/30 text-white">OUR BRANDS</a>
             </div>
         </div>
-
-        <div class="w-full bg-black/80 border-t border-white/10 backdrop-blur-md z-20 absolute bottom-0">
-            <div class="flex items-center">
-                <div class="bg-brand-gold text-brand-navy font-bold px-6 py-4 text-xs uppercase tracking-widest z-30 whitespace-nowrap shadow-xl">
-                    <i class="fa-solid fa-circle-dot fa-beat-fade mr-2 text-red-600"></i> Live Updates
-                </div>
-                <div class="marquee-container w-full py-4 overflow-hidden">
-                    <div class="marquee-content text-xs font-bold tracking-[0.15em] text-white uppercase">
-                        &nbsp; • &nbsp; PRODUCTION LIVE IN SANGRANA FACILITY &nbsp; • &nbsp; ACHIEVED 100% BIS COMPLIANCE (IS:14543) &nbsp; • &nbsp; NEW DISTRIBUTION HUBS OPENING IN BATHINDA & MOGA &nbsp; • &nbsp; VIV-ELION FOUNDATION DONATES 5,000L CLEAN WATER &nbsp; • &nbsp; ZERO LIQUID DISCHARGE CERTIFIED &nbsp; • &nbsp; STOCK STATUS: HEALTHY &nbsp; • &nbsp; 
-                        &nbsp; • &nbsp; PRODUCTION LIVE IN SANGRANA FACILITY &nbsp; • &nbsp; ACHIEVED 100% BIS COMPLIANCE (IS:14543) &nbsp; • &nbsp; NEW DISTRIBUTION HUBS OPENING IN BATHINDA & MOGA &nbsp; • &nbsp; VIV-ELION FOUNDATION DONATES 5,000L CLEAN WATER &nbsp; • &nbsp; ZERO LIQUID DISCHARGE CERTIFIED &nbsp; • &nbsp; STOCK STATUS: HEALTHY &nbsp; • &nbsp; 
-                    </div>
-                </div>
-            </div>
-        </div>
     </header>
 
-    <section class="py-24 px-6 relative bg-gradient-to-b from-[#0a192f] to-[#051020]">
+    <div class="bg-brand-gold text-brand-navy py-3 overflow-hidden whitespace-nowrap border-y border-white/10">
+        <div class="animate-marquee inline-block font-bold tracking-widest text-xs uppercase">
+            &nbsp; • &nbsp; LIVE FROM SANGRANA &nbsp; • &nbsp; 100% BIS COMPLIANT &nbsp; • &nbsp; ZERO LIQUID DISCHARGE FACILITY &nbsp; • &nbsp; PARTNERING WITH 500+ DISTRIBUTORS &nbsp; • &nbsp; SUSTAINABLE HYDRATION &nbsp; • &nbsp;
+             &nbsp; • &nbsp; LIVE FROM SANGRANA &nbsp; • &nbsp; 100% BIS COMPLIANT &nbsp; • &nbsp; ZERO LIQUID DISCHARGE FACILITY &nbsp; • &nbsp; PARTNERING WITH 500+ DISTRIBUTORS &nbsp; • &nbsp; SUSTAINABLE HYDRATION &nbsp; • &nbsp;
+        </div>
+    </div>
+
+    <section class="py-24 px-6 relative">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div data-aos="fade-right">
                 <span class="text-brand-gold font-bold tracking-[0.2em] text-xs uppercase mb-4 block">Our Philosophy</span>
@@ -138,10 +122,8 @@
                 <a href="about.html" class="inline-block mt-8 text-brand-gold border-b border-brand-gold pb-1 font-bold tracking-widest hover:text-white hover:border-white transition">READ OUR STORY</a>
             </div>
             <div class="relative" data-aos="fade-left">
-                <div class="w-full h-96 rounded-2xl bg-gradient-to-br from-brand-gold/20 to-brand-navy border border-white/10 shadow-2xl flex items-center justify-center relative overflow-hidden">
-                    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20"></div>
-                    <i class="fa-solid fa-droplet text-6xl text-brand-gold animate-bounce"></i>
-                </div>
+                <div class="absolute -inset-4 bg-brand-gold/20 rounded-2xl blur-lg"></div>
+                <img src="https://images.unsplash.com/photo-1560023907-5f339617ea30?q=80&w=1974&auto=format&fit=crop" class="relative rounded-2xl border border-white/10 shadow-2xl grayscale hover:grayscale-0 transition duration-700">
             </div>
         </div>
     </section>
@@ -216,9 +198,7 @@
                 <a href="sustainability.html" class="text-white border-b border-white pb-1 hover:text-green-500 hover:border-green-500 transition">Our Sustainability Pledge</a>
             </div>
             <div class="md:w-1/2" data-aos="fade-left">
-                <div class="w-full h-80 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
-                    <i class="fa-solid fa-leaf text-8xl text-green-500 opacity-80"></i>
-                </div>
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2013&auto=format&fit=crop" class="rounded-2xl shadow-2xl opacity-80 hover:opacity-100 transition duration-500 border border-white/10">
             </div>
         </div>
     </section>
