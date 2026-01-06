@@ -30,7 +30,7 @@
     <style>
         body { font-family: 'Montserrat', sans-serif; background-color: #0a192f; color: white; overflow-x: hidden; }
         
-        /* AURORA ENGINE (Restored) */
+        /* AURORA ENGINE */
         .aurora-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: #0a192f; }
         .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.6; animation: float 15s infinite alternate; }
         .blob-1 { top: -10%; left: -10%; width: 70vw; height: 70vw; background: #1e3a8a; }
@@ -88,29 +88,52 @@
         </div>
     </nav>
 
-    <header class="h-screen relative flex items-center justify-center overflow-hidden">
-        <div class="container mx-auto px-6 relative z-10 text-center" data-aos="fade-up" data-aos-duration="1500">
+    <header class="pt-40 pb-16 relative flex items-center justify-center text-center px-4 z-10">
+        <div data-aos="fade-up" data-aos-duration="1500">
             <h1 class="text-5xl md:text-8xl font-serif font-black text-white mb-6 leading-tight drop-shadow-2xl">
                 REFRESH <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-white">THE WORLD.</span>
             </h1>
-            <p class="text-xl md:text-2xl text-slate-300 mb-10 max-w-3xl mx-auto font-light tracking-wide">
+            <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto font-light tracking-wide">
                 Engineered for purity. Crafted for life. <br> The new standard of hydration from Sangrana, Punjab.
             </p>
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <a href="about.html" class="bg-brand-gold text-brand-navy px-10 py-4 font-bold tracking-[0.2em] rounded hover:bg-white transition shadow-[0_0_20px_rgba(212,175,55,0.5)]">DISCOVER VIV-ELION</a>
-                <a href="brands.html" class="glass-panel px-10 py-4 font-bold tracking-[0.2em] rounded hover:bg-white/10 transition border border-white/30 text-white">OUR BRANDS</a>
-            </div>
         </div>
     </header>
 
-    <div class="bg-brand-gold text-brand-navy py-3 overflow-hidden whitespace-nowrap border-y border-white/10">
-        <div class="animate-marquee inline-block font-bold tracking-widest text-xs uppercase">
-            &nbsp; • &nbsp; LIVE FROM SANGRANA &nbsp; • &nbsp; 100% BIS COMPLIANT &nbsp; • &nbsp; ZERO LIQUID DISCHARGE FACILITY &nbsp; • &nbsp; PARTNERING WITH 500+ DISTRIBUTORS &nbsp; • &nbsp; SUSTAINABLE HYDRATION &nbsp; • &nbsp;
-             &nbsp; • &nbsp; LIVE FROM SANGRANA &nbsp; • &nbsp; 100% BIS COMPLIANT &nbsp; • &nbsp; ZERO LIQUID DISCHARGE FACILITY &nbsp; • &nbsp; PARTNERING WITH 500+ DISTRIBUTORS &nbsp; • &nbsp; SUSTAINABLE HYDRATION &nbsp; • &nbsp;
-        </div>
-    </div>
+    <section class="pb-24 px-4 md:px-6 relative z-10" data-aos="fade-up" data-aos-delay="200">
+        <div class="container mx-auto">
+            <div class="relative w-full rounded-[2.5rem] overflow-hidden shadow-2xl h-[550px] md:h-[650px] group border border-white/10">
+                
+                <img src="https://images.unsplash.com/photo-1534057308991-b9b3a578f1b9?q=80&w=2576&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                
+                <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
+                
+                <div class="absolute inset-0 flex flex-col justify-center items-start p-10 md:p-24">
+                    <span class="bg-brand-gold text-brand-navy px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 animate-pulse">Now Launching</span>
+                    
+                    <h2 class="text-4xl md:text-6xl font-serif font-black text-white max-w-2xl mb-6 leading-tight drop-shadow-lg">
+                        THE 1-LITRE <br> REVOLUTION
+                    </h2>
+                    
+                    <p class="text-lg md:text-xl text-slate-200 mb-10 max-w-lg font-medium">
+                        Introducing the new Pure-Grip™ bottle. <br> 100% Recycled Plastic. 0% Compromise. <br> Made right here in Sangrana.
+                    </p>
+                    
+                    <a href="brands.html" class="bg-white text-brand-navy px-10 py-4 rounded-full font-bold tracking-widest hover:bg-brand-gold hover:text-white transition transform hover:scale-105 shadow-lg flex items-center gap-3">
+                        Explore Product <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
 
-    <section class="py-24 px-6 relative">
+                <div class="absolute bottom-10 left-0 w-full flex justify-center gap-4">
+                    <button class="w-3 h-3 rounded-full bg-white scale-125 shadow-glow"></button>
+                    <button class="w-3 h-3 rounded-full bg-white/30 hover:bg-white transition"></button>
+                    <button class="w-3 h-3 rounded-full bg-white/30 hover:bg-white transition"></button>
+                    <button class="w-3 h-3 rounded-full bg-white/30 hover:bg-white transition"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 relative bg-gradient-to-b from-[#0a192f] to-[#051020]">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div data-aos="fade-right">
                 <span class="text-brand-gold font-bold tracking-[0.2em] text-xs uppercase mb-4 block">Our Philosophy</span>
@@ -122,8 +145,9 @@
                 <a href="about.html" class="inline-block mt-8 text-brand-gold border-b border-brand-gold pb-1 font-bold tracking-widest hover:text-white hover:border-white transition">READ OUR STORY</a>
             </div>
             <div class="relative" data-aos="fade-left">
-                <div class="absolute -inset-4 bg-brand-gold/20 rounded-2xl blur-lg"></div>
-                <img src="https://images.unsplash.com/photo-1560023907-5f339617ea30?q=80&w=1974&auto=format&fit=crop" class="relative rounded-2xl border border-white/10 shadow-2xl grayscale hover:grayscale-0 transition duration-700">
+                <div class="w-full h-96 rounded-2xl bg-gradient-to-br from-brand-gold/10 to-brand-navy border border-white/10 shadow-2xl flex items-center justify-center relative overflow-hidden">
+                    <i class="fa-solid fa-droplet text-8xl text-brand-gold opacity-50"></i>
+                </div>
             </div>
         </div>
     </section>
@@ -136,7 +160,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <a href="brands.html" class="group relative block h-96 overflow-hidden rounded-xl bg-slate-100" data-aos="fade-up" data-aos-delay="100">
+                <a href="brands.html" class="group relative block h-96 overflow-hidden rounded-xl bg-slate-100 border border-slate-200" data-aos="fade-up" data-aos-delay="100">
                     <div class="absolute inset-0 bg-slate-200 flex items-center justify-center group-hover:scale-105 transition duration-500">
                         <i class="fa-solid fa-bottle-water text-9xl text-slate-300"></i>
                     </div>
@@ -147,7 +171,7 @@
                     </div>
                 </a>
 
-                <a href="brands.html" class="group relative block h-96 overflow-hidden rounded-xl bg-slate-100" data-aos="fade-up" data-aos-delay="200">
+                <a href="brands.html" class="group relative block h-96 overflow-hidden rounded-xl bg-brand-navy border border-brand-gold/30" data-aos="fade-up" data-aos-delay="200">
                     <div class="absolute inset-0 bg-brand-navy flex items-center justify-center group-hover:scale-105 transition duration-500">
                         <i class="fa-solid fa-bottle-water text-9xl text-white/20"></i>
                     </div>
@@ -158,7 +182,7 @@
                     </div>
                 </a>
 
-                <a href="brands.html" class="group relative block h-96 overflow-hidden rounded-xl bg-slate-100" data-aos="fade-up" data-aos-delay="300">
+                <a href="brands.html" class="group relative block h-96 overflow-hidden rounded-xl bg-slate-100 border border-slate-200" data-aos="fade-up" data-aos-delay="300">
                     <div class="absolute inset-0 bg-slate-200 flex items-center justify-center group-hover:scale-105 transition duration-500">
                         <i class="fa-solid fa-bottle-water text-9xl text-slate-300"></i>
                     </div>
@@ -198,7 +222,9 @@
                 <a href="sustainability.html" class="text-white border-b border-white pb-1 hover:text-green-500 hover:border-green-500 transition">Our Sustainability Pledge</a>
             </div>
             <div class="md:w-1/2" data-aos="fade-left">
-                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2013&auto=format&fit=crop" class="rounded-2xl shadow-2xl opacity-80 hover:opacity-100 transition duration-500 border border-white/10">
+                <div class="w-full h-80 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
+                    <i class="fa-solid fa-leaf text-8xl text-green-500 opacity-80"></i>
+                </div>
             </div>
         </div>
     </section>
