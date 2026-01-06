@@ -5,197 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viv-Elion | Refresh The World</title>
     <style>
-        /* --- 1. GLOBAL RESET & FONTS --- */
+        /* GLOBAL RESET */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
-            background: linear-gradient(135deg, #051336 0%, #020612 100%); /* Deep Royal Blue */
+            background-color: #050e24; /* Deep Navy Background */
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
             color: white; 
-            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* --- 2. HEADER (Exact match to Screenshot) --- */
+        /* HEADER */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 50px;
-            background: transparent; /* Blends with body */
+            padding: 20px 50px;
         }
 
         .logo { 
             font-family: 'Times New Roman', serif; 
             text-transform: uppercase; 
             letter-spacing: 2px; 
-            cursor: pointer;
         }
-        .logo h2 { font-size: 1.2rem; color: white; margin-bottom: 2px; }
+        .logo h2 { font-size: 1.2rem; margin-bottom: 2px; color: white; }
         .logo span { font-size: 0.6rem; color: #889dc0; letter-spacing: 4px; display: block; }
 
-        .nav-menu { 
-            display: flex; 
-            gap: 30px; 
-            align-items: center;
-        }
-
-        .nav-links { 
-            display: flex; 
-            gap: 30px; 
-        }
+        .nav-menu { display: flex; align-items: center; gap: 40px; }
+        .nav-links { display: flex; gap: 30px; }
         .nav-links a { 
             text-decoration: none; 
             color: #ccc; 
-            font-size: 0.75rem; 
+            font-size: 0.7rem; 
             font-weight: bold; 
             text-transform: uppercase; 
             letter-spacing: 1px;
-            transition: color 0.3s; 
         }
-        .nav-links a:hover { color: #d4af37; }
+        .header-icons { font-size: 0.9rem; color: white; display: flex; gap: 15px; }
 
-        .nav-icons { display: flex; gap: 20px; color: white; font-size: 1rem; cursor: pointer; }
-
-        /* --- 3. HERO MAIN TEXT (Static "Refresh the World") --- */
-        .hero-static-content {
+        /* HERO TEXT (REFRESH THE WORLD) */
+        .hero-text-section {
             text-align: center;
-            padding-top: 40px;
-            padding-bottom: 40px;
+            margin-top: 40px;
+            margin-bottom: 40px;
         }
-
         .hero-title {
             font-family: 'Times New Roman', serif;
-            font-size: 4.5rem;
+            font-size: 4rem;
             line-height: 1.1;
-            margin-bottom: 20px;
         }
+        .hero-title .gold { color: #d4af37; } /* Gold Color */
         
-        .hero-title .gold { color: #d4af37; } /* The Gold Text */
-
         .hero-subtitle {
-            font-size: 1.1rem;
+            margin-top: 15px;
+            font-size: 1rem;
             color: #aab8d1;
             font-weight: 300;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
-        /* --- 4. THE SLIDER CARD (The "Card" from your SS) --- */
-        .slider-card-container {
+        /* THE CARD (RECTANGULAR BANNER) */
+        .banner-card {
             width: 90%;
             max-width: 1200px;
-            height: 500px; /* Fixed height for the card */
             margin: 0 auto 50px auto;
-            background: linear-gradient(to right, #0a1a3c, #11224d); /* Lighter blue card bg */
+            background: linear-gradient(135deg, #0a1a3c 0%, #152850 100%);
             border-radius: 30px;
-            position: relative; /* For dots positioning */
-            overflow: hidden; /* Keeps content inside rounded corners */
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            padding: 60px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            min-height: 450px;
+            overflow: hidden;
         }
 
-        /* Individual Slide */
-        .slide {
-            display: none; /* Hidden by default */
-            width: 100%;
-            height: 100%;
-            padding: 60px 80px;
-            animation: fadeEffect 1s;
-        }
-        .slide.active { display: flex; align-items: center; justify-content: space-between; }
-
-        @keyframes fadeEffect {
-            from {opacity: 0.4;} to {opacity: 1;}
-        }
-
-        /* Slide Content Left (Text) */
-        .slide-text {
+        /* Left Side Content */
+        .card-content {
             flex: 1;
-            max-width: 50%;
+            z-index: 2;
         }
 
         .badge {
-            display: inline-block;
-            background-color: #b8860b; /* Dark Gold */
+            background-color: #b8860b;
             color: #000;
+            padding: 5px 10px;
             font-size: 0.7rem;
-            font-weight: 800;
-            padding: 6px 12px;
+            font-weight: bold;
             border-radius: 4px;
             text-transform: uppercase;
-            margin-bottom: 25px;
+            display: inline-block;
+            margin-bottom: 20px;
         }
 
-        .slide-text h3 {
+        .card-content h1 {
             font-family: 'Times New Roman', serif;
             font-size: 3rem;
             line-height: 1.1;
             margin-bottom: 20px;
-            color: white;
         }
 
-        .slide-text p {
-            font-size: 1rem;
-            color: #d1d9e6;
+        .card-content p {
+            color: #ccc;
+            max-width: 400px;
             line-height: 1.6;
-            margin-bottom: 35px;
-            max-width: 90%;
+            margin-bottom: 30px;
+            font-size: 1rem;
         }
 
-        .btn-pill {
-            display: inline-block;
+        .btn-white {
             background: white;
-            color: #0a1a3c;
-            padding: 15px 30px;
-            border-radius: 50px;
+            color: #050e24;
+            padding: 12px 25px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
             font-size: 0.9rem;
-            transition: transform 0.2s;
+            display: inline-block;
         }
-        .btn-pill:hover { transform: scale(1.05); }
 
-        /* Slide Content Right (Image) */
-        .slide-image {
-            flex: 1;
-            height: 100%;
-            display: flex;
-            justify-content: flex-end; /* Push image to right */
-            align-items: center;
-            position: relative;
+        /* Right Side (The "Cheap" Vector Drop you had before) */
+        /* I have recreated the shape using CSS to match your screenshot */
+        .water-drop-graphic {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 0 0 0 100%; /* Makes the curve shape */
+            border-top-left-radius: 50%;
         }
         
-        /* The Realistic Bottle Image */
-        .slide-image img {
-            max-height: 110%; /* Allow slight overlap for 3D effect */
-            width: auto;
-            transform: rotate(0deg);
-            filter: drop-shadow(-20px 20px 30px rgba(0,0,0,0.5)); /* Deep shadow */
-        }
-
-        /* Dots Navigation */
-        .dots-container {
+        /* Fake Dots at bottom */
+        .dots {
             position: absolute;
-            bottom: 25px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 12px;
+            gap: 8px;
         }
-        .dot {
-            height: 10px;
-            width: 10px;
-            background-color: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .dot.active { background-color: white; }
+        .dot { width: 8px; height: 8px; background: rgba(255,255,255,0.2); border-radius: 50%; }
+        .dot.active { background: white; }
 
-        /* Responsive Fixes */
-        @media (max-width: 900px) {
-            .hero-title { font-size: 3rem; }
-            .slide.active { flex-direction: column-reverse; text-align: center; padding: 40px; }
-            .slide-text { max-width: 100%; }
-            .slide-image { justify-content: center; height: 200px; margin-bottom: 20px; }
-        }
     </style>
 </head>
 <body>
@@ -212,14 +163,14 @@
                 <a href="#">Leadership</a>
                 <a href="#">Media Center</a>
             </nav>
-            <div class="nav-icons">
+            <div class="header-icons">
                 <span>🔍</span>
                 <span>ℹ️</span>
             </div>
         </div>
     </header>
 
-    <section class="hero-static-content">
+    <section class="hero-text-section">
         <h1 class="hero-title">
             REFRESH <br>
             <span class="gold">THE WORLD.</span>
@@ -230,81 +181,23 @@
         </div>
     </section>
 
-    <div class="slider-card-container">
-        
-        <div class="slide active">
-            <div class="slide-text">
-                <span class="badge">NOW LAUNCHING</span>
-                <h3>THE 1-LITRE <br> REVOLUTION</h3>
-                <p>Introducing the new Pure-Grip™ bottle. 100% Recycled Plastic. 0% Compromise. Made right here in Sangrana.</p>
-                <a href="#" class="btn-pill">Explore Product &rarr;</a>
-            </div>
-            <div class="slide-image">
-                <img src="https://placehold.co/400x700/0a1a3c/d4af37?text=Pure-Grip+Bottle" alt="Viv-Elion 1 Litre">
-            </div>
+    <section class="banner-card">
+        <div class="card-content">
+            <span class="badge">Now Launching</span>
+            <h1>THE 1-LITRE <br> REVOLUTION</h1>
+            <p>Introducing the new Pure-Grip™ bottle. 100% Recycled Plastic. 0% Compromise. Made right here in Sangrana.</p>
+            <a href="#" class="btn-white">Explore Product &rarr;</a>
         </div>
 
-        <div class="slide">
-            <div class="slide-text">
-                <span class="badge" style="background: #2E8B57; color: white;">SUSTAINABILITY</span>
-                <h3>FUTURE <br> FOCUSED</h3>
-                <p>Our Sangrana facility uses 40% solar power and advanced rainwater harvesting. Hydration that helps the planet.</p>
-                <a href="#" class="btn-pill">Our Impact &rarr;</a>
-            </div>
-            <div class="slide-image">
-                <img src="https://placehold.co/400x700/0a1a3c/2E8B57?text=Eco+Process" alt="Viv-Elion Eco">
-            </div>
+        <div class="water-drop-graphic"></div>
+
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
-
-        <div class="dots-container">
-            <span class="dot active" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-        </div>
-
-    </div>
-
-    <script>
-        let slideIndex = 1;
-        let slideTimer;
-        
-        // Start the slider
-        showSlides(slideIndex);
-        startAutoSlide();
-
-        function currentSlide(n) {
-            clearInterval(slideTimer); // Stop auto-slide when clicked
-            showSlides(slideIndex = n);
-            startAutoSlide(); // Restart auto-slide
-        }
-
-        function startAutoSlide() {
-            slideTimer = setInterval(function() {
-                slideIndex++;
-                showSlides(slideIndex);
-            }, 5000); // 5 Seconds per slide
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("slide");
-            let dots = document.getElementsByClassName("dot");
-            
-            if (n > slides.length) {slideIndex = 1}    
-            if (n < 1) {slideIndex = slides.length}
-            
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-                slides[i].classList.remove("active");
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            
-            slides[slideIndex-1].style.display = "flex"; // Note: Use flex to keep layout
-            setTimeout(() => slides[slideIndex-1].classList.add("active"), 10);
-            dots[slideIndex-1].className += " active";
-        }
-    </script>
+    </section>
 
 </body>
 </html>
