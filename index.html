@@ -40,13 +40,14 @@
         .blob-3 { top: 40%; left: 30%; width: 40vw; height: 40vw; background: #d4af37; opacity: 0.2; }
         @keyframes float { 0% { transform: translate(0, 0); } 100% { transform: translate(30px, 50px); } }
 
-        /* GLASS PANEL STYLE */
-        /* This class is now added/removed via JavaScript on scroll */
+    /* UPDATED GLASS PANEL: 
+      1. Stronger border-bottom (0.3 opacity) creates the thin white line 
+     */
         .glass-panel { 
-            background: rgba(10, 25, 47, 0.7); 
-            backdrop-filter: blur(20px);       
-            border-bottom: 1px solid rgba(255,255,255,0.1); 
-        }
+        background: rgba(10, 25, 47, 0.8); /* Slightly darker background for contrast */
+        backdrop-filter: blur(20px);       
+        border-bottom: 1px solid rgba(255,255,255,0.3); /* <--- THIS IS THE LINE (Increased visibility) */
+   }
         
         .group:hover .mega-menu { opacity: 1; visibility: visible; transform: translateY(0); }
         .mega-menu { opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; }
