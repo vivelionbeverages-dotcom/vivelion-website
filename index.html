@@ -40,10 +40,11 @@
         .blob-3 { top: 40%; left: 30%; width: 40vw; height: 40vw; background: #d4af37; opacity: 0.2; }
         @keyframes float { 0% { transform: translate(0, 0); } 100% { transform: translate(30px, 50px); } }
 
-        /* UPDATED GLASS PANEL: More Transparent & Blurry */
+        /* GLASS PANEL STYLE */
+        /* This class is now added/removed via JavaScript on scroll */
         .glass-panel { 
-            background: rgba(10, 25, 47, 0.7); /* Lower opacity for transparency */
-            backdrop-filter: blur(20px);       /* Heavy blur for glass effect */
+            background: rgba(10, 25, 47, 0.7); 
+            backdrop-filter: blur(20px);       
             border-bottom: 1px solid rgba(255,255,255,0.1); 
         }
         
@@ -60,7 +61,7 @@
 
     <div class="aurora-bg"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
 
-    <nav class="fixed w-full z-50 glass-panel h-28 flex items-center transition-all duration-300" id="navbar">
+    <nav class="fixed w-full z-50 h-28 flex items-center transition-all duration-300" id="navbar">
         <div class="container mx-auto px-6 flex justify-between items-center relative">
             
             <a href="index.html" class="flex items-center gap-4 z-50 group">
@@ -363,6 +364,19 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                // If scrolled down more than 50px, add the glass panel look
+                navbar.classList.add('glass-panel');
+            } else {
+                // If at the top, remove it to make it transparent
+                navbar.classList.remove('glass-panel');
+            }
+        });
+    </script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
