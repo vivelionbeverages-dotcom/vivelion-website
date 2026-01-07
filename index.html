@@ -23,7 +23,7 @@
                     },
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
-                        serif: ['Abril Fatface', 'cursive'] /* UPDATED FONT HERE */
+                        serif: ['Abril Fatface', 'cursive']
                     }
                 }
             }
@@ -40,7 +40,13 @@
         .blob-3 { top: 40%; left: 30%; width: 40vw; height: 40vw; background: #d4af37; opacity: 0.2; }
         @keyframes float { 0% { transform: translate(0, 0); } 100% { transform: translate(30px, 50px); } }
 
-        .glass-panel { background: rgba(10, 25, 47, 0.95); backdrop-filter: blur(25px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        /* UPDATED GLASS PANEL: More Transparent & Blurry */
+        .glass-panel { 
+            background: rgba(10, 25, 47, 0.7); /* Lower opacity for transparency */
+            backdrop-filter: blur(20px);       /* Heavy blur for glass effect */
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
+        }
+        
         .group:hover .mega-menu { opacity: 1; visibility: visible; transform: translateY(0); }
         .mega-menu { opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; }
         
@@ -54,17 +60,24 @@
 
     <div class="aurora-bg"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
 
-    <nav class="fixed w-full z-50 glass-panel h-24 flex items-center transition-all duration-300" id="navbar">
+    <nav class="fixed w-full z-50 glass-panel h-28 flex items-center transition-all duration-300" id="navbar">
         <div class="container mx-auto px-6 flex justify-between items-center relative">
-            <a href="index.html" class="flex flex-col group z-50">
-                <span class="text-3xl font-serif font-black text-white tracking-widest hover:text-brand-gold transition">VIV-ELION</span>
-                <span class="text-[9px] uppercase tracking-[0.4em] text-slate-400 font-bold">Beverage Company</span>
+            
+            <a href="index.html" class="flex items-center gap-4 z-50 group">
+                <img src="https://raw.githubusercontent.com/vivelionbeverages-dotcom/vivelion-website/main/logo.png" 
+                     class="w-14 h-14 object-contain drop-shadow-lg transition duration-300 group-hover:scale-110" 
+                     alt="Viv-Elion Logo">
+                
+                <div class="flex flex-col">
+                    <span class="text-3xl font-serif font-black text-white tracking-widest hover:text-brand-gold transition">VIV-ELION</span>
+                    <span class="text-[9px] uppercase tracking-[0.4em] text-slate-400 font-bold">Beverage Company</span>
+                </div>
             </a>
 
             <div class="hidden md:flex h-full items-center gap-10 font-bold text-xs uppercase tracking-widest text-slate-200">
                 <div class="group h-full flex items-center">
                     <a href="about.html" class="py-8 hover:text-brand-gold transition cursor-pointer flex items-center gap-1">Our Company <i class="fa-solid fa-chevron-down text-[8px]"></i></a>
-                    <div class="mega-menu absolute left-0 top-24 w-full glass-panel border-t border-white/10 p-12 shadow-2xl">
+                    <div class="mega-menu absolute left-0 top-28 w-full glass-panel border-t border-white/10 p-12 shadow-2xl">
                         <div class="container mx-auto flex gap-12">
                             <div class="w-1/4"><h4 class="text-brand-gold mb-4 border-b border-white/10 pb-2">Who We Are</h4><ul class="space-y-3 text-sm normal-case tracking-normal text-slate-300"><li><a href="about.html" class="hover:text-white block">Vision & Purpose</a></li><li><a href="history.html" class="hover:text-white block">History</a></li></ul></div>
                             <div class="w-1/4"><h4 class="text-brand-gold mb-4 border-b border-white/10 pb-2">Operations</h4><ul class="space-y-3 text-sm normal-case tracking-normal text-slate-300"><li><a href="about.html" class="hover:text-white block">Sangrana Plant</a></li><li><a href="sustainability.html" class="hover:text-white block">Sustainability</a></li></ul></div>
@@ -82,7 +95,7 @@
             </div>
             <button onclick="toggleMenu()" class="md:hidden text-2xl text-white"><i class="fa-solid fa-bars-staggered"></i></button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden glass-panel border-x-0 absolute top-24 left-0 w-full">
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-x-0 absolute top-28 left-0 w-full">
             <a href="about.html" class="block p-4 border-b border-white/10 font-bold text-white">OUR COMPANY</a>
             <a href="brands.html" class="block p-4 border-b border-white/10 font-bold text-white">BRAND</a>
             <a href="leadership.html" class="block p-4 border-b border-white/10 font-bold text-white">LEADERSHIP</a>
@@ -90,7 +103,7 @@
         </div>
     </nav>
 
-    <header class="relative min-h-screen flex items-center overflow-hidden pt-32 pb-20">
+    <header class="relative min-h-screen flex items-center overflow-hidden pt-36 pb-20">
         
         <div class="absolute inset-0 z-0 opacity-20 pointer-events-none" 
              style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/23/World_map_blank_with_dots.svg'); 
@@ -221,7 +234,7 @@
                 </a>
 
                 <a href="brands.html" class="group relative block h-96 overflow-hidden rounded-xl bg-slate-100" data-aos="fade-up" data-aos-delay="300">
-                    <img src="hands.jpg" 
+                    <img src="hydration.jpg" 
                          class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110" 
                          alt="Viv-Elion Pure">
                     <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/30 to-transparent flex flex-col justify-end p-8">
