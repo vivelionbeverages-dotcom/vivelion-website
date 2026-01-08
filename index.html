@@ -63,48 +63,52 @@
     <div class="aurora-bg"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
 
     <nav class="fixed w-full z-50 h-28 flex items-center transition-all duration-300" id="navbar">
-        <div class="container mx-auto px-6 flex justify-between items-center relative">
+    <div class="container mx-auto px-6 flex justify-between items-center relative">
+        
+        <a href="index.html" class="flex items-center gap-4 z-50 group">
+            <img src="https://raw.githubusercontent.com/vivelionbeverages-dotcom/vivelion-website/main/logo.png" 
+                 class="w-14 h-14 object-contain drop-shadow-lg transition duration-300 group-hover:scale-110" 
+                 alt="Viv-Elion Logo">
             
-            <a href="index.html" class="flex items-center gap-4 z-50 group">
-                <img src="https://raw.githubusercontent.com/vivelionbeverages-dotcom/vivelion-website/main/logo.png" 
-                     class="w-14 h-14 object-contain drop-shadow-lg transition duration-300 group-hover:scale-110" 
-                     alt="Viv-Elion Logo">
-                
-                <div class="flex flex-col">
-                    <span class="text-3xl font-serif font-black text-white tracking-widest hover:text-brand-gold transition">VIV-ELION</span>
-                    <span class="text-[9px] uppercase tracking-[0.4em] text-slate-400 font-bold">Beverage Company</span>
-                </div>
-            </a>
+            <div class="flex flex-col">
+                <span class="text-3xl font-serif font-black text-white tracking-widest hover:text-brand-gold transition">VIV-ELION</span>
+                <span class="text-[9px] uppercase tracking-[0.4em] text-slate-400 font-bold">Beverage Company</span>
+            </div>
+        </a>
 
-            <div class="hidden md:flex h-full items-center gap-10 font-bold text-xs uppercase tracking-widest text-slate-200">
-                <div class="group h-full flex items-center">
-                    <a href="about.html" class="py-8 hover:text-brand-gold transition cursor-pointer flex items-center gap-1">Our Company <i class="fa-solid fa-chevron-down text-[8px]"></i></a>
-                    <div class="mega-menu absolute left-0 top-28 w-full glass-panel border-t border-white/10 p-12 shadow-2xl">
-                        <div class="container mx-auto flex gap-12">
-                            <div class="w-1/4"><h4 class="text-brand-gold mb-4 border-b border-white/10 pb-2">Who We Are</h4><ul class="space-y-3 text-sm normal-case tracking-normal text-slate-300"><li><a href="about.html" class="hover:text-white block">Vision & Purpose</a></li><li><a href="history.html" class="hover:text-white block">History</a></li></ul></div>
-                            <div class="w-1/4"><h4 class="text-brand-gold mb-4 border-b border-white/10 pb-2">Operations</h4><ul class="space-y-3 text-sm normal-case tracking-normal text-slate-300"><li><a href="about.html" class="hover:text-white block">Sangrana Plant</a></li><li><a href="sustainability.html" class="hover:text-white block">Sustainability</a></li></ul></div>
-                            <div class="w-1/2 border border-white/10 rounded-xl overflow-hidden relative h-48"><img src="https://github.com/vivelionbeverages-dotcom/vivelion-website/blob/main/ceo-vishal.jpeg?raw=true" class="w-full h-full object-cover opacity-60"><div class="absolute bottom-4 left-6"><span class="text-brand-gold text-xs">Leadership</span><h4 class="text-xl font-serif text-white">Vishal Kumar</h4></div></div>
-                        </div>
+        <div class="hidden md:flex h-full items-center gap-8 font-bold text-xs uppercase tracking-widest text-slate-200">
+            <div class="group h-full flex items-center">
+                <a href="about.html" class="py-8 hover:text-brand-gold transition cursor-pointer flex items-center gap-1">Our Company <i class="fa-solid fa-chevron-down text-[8px]"></i></a>
+                <div class="mega-menu absolute left-0 top-28 w-full glass-panel border-t border-white/10 p-12 shadow-2xl">
+                    <div class="container mx-auto flex gap-12">
+                        <div class="w-1/4"><h4 class="text-brand-gold mb-4 border-b border-white/10 pb-2">Who We Are</h4><ul class="space-y-3 text-sm normal-case tracking-normal text-slate-300"><li><a href="about.html" class="hover:text-white block">Vision & Purpose</a></li><li><a href="leadership.html" class="hover:text-white block">Leadership</a></li></ul></div>
+                        <div class="w-1/4"><h4 class="text-brand-gold mb-4 border-b border-white/10 pb-2">Operations</h4><ul class="space-y-3 text-sm normal-case tracking-normal text-slate-300"><li><a href="about.html" class="hover:text-white block">Sangrana Plant</a></li><li><a href="media.html" class="hover:text-white block">Media Center</a></li></ul></div>
+                        <div class="w-1/2 border border-white/10 rounded-xl overflow-hidden relative h-48"><img src="https://github.com/vivelionbeverages-dotcom/vivelion-website/blob/main/ceo-vishal.jpeg?raw=true" class="w-full h-full object-cover opacity-60"><div class="absolute bottom-4 left-6"><span class="text-brand-gold text-xs">Leadership</span><h4 class="text-xl font-serif text-white">Vishal Kumar</h4></div></div>
                     </div>
                 </div>
-                <a href="brands.html" class="hover:text-brand-gold transition">Brand</a>
-                <a href="leadership.html" class="hover:text-brand-gold transition">Leadership</a>
-                <a href="media.html" class="hover:text-brand-gold transition">Media Center</a>
-                <div class="flex items-center gap-6 border-l border-white/20 pl-8 ml-4">
-                    <button class="hover:text-brand-gold transition"><i class="fa-solid fa-magnifying-glass text-lg"></i></button>
-                    <a href="about.html" class="hover:text-brand-gold transition"><i class="fa-solid fa-circle-info text-lg"></i></a>
-                </div>
             </div>
-            <button onclick="toggleMenu()" class="md:hidden text-2xl text-white"><i class="fa-solid fa-bars-staggered"></i></button>
+            
+            <a href="brands.html" class="hover:text-brand-gold transition">Brand</a>
+            <a href="leadership.html" class="hover:text-brand-gold transition">Leadership</a>
+            <a href="media.html" class="hover:text-brand-gold transition">Media</a>
+            
+            <a href="contact.html" class="border border-white/30 px-6 py-2 rounded-full hover:bg-brand-gold hover:text-brand-navy hover:border-brand-gold transition">Contact Us</a>
+            
+            <div class="flex items-center gap-6 border-l border-white/20 pl-8 ml-2">
+                <button class="hover:text-brand-gold transition"><i class="fa-solid fa-magnifying-glass text-lg"></i></button>
+            </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden glass-panel border-x-0 absolute top-28 left-0 w-full">
-            <a href="about.html" class="block p-4 border-b border-white/10 font-bold text-white">OUR COMPANY</a>
-            <a href="brands.html" class="block p-4 border-b border-white/10 font-bold text-white">BRAND</a>
-            <a href="leadership.html" class="block p-4 border-b border-white/10 font-bold text-white">LEADERSHIP</a>
-            <a href="media.html" class="block p-4 border-b border-white/10 font-bold text-white">MEDIA CENTER</a>
-        </div>
-    </nav>
-
+        <button onclick="toggleMenu()" class="md:hidden text-2xl text-white"><i class="fa-solid fa-bars-staggered"></i></button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden glass-panel border-x-0 absolute top-28 left-0 w-full">
+        <a href="about.html" class="block p-4 border-b border-white/10 font-bold text-white">OUR COMPANY</a>
+        <a href="brands.html" class="block p-4 border-b border-white/10 font-bold text-white">BRAND</a>
+        <a href="leadership.html" class="block p-4 border-b border-white/10 font-bold text-white">LEADERSHIP</a>
+        <a href="media.html" class="block p-4 border-b border-white/10 font-bold text-white">MEDIA CENTER</a>
+        <a href="contact.html" class="block p-4 border-b border-white/10 font-bold text-brand-gold">CONTACT US</a>
+    </div>
+</nav>
+    
     <header class="relative min-h-screen flex items-center overflow-hidden pt-36 pb-20">
         
         <div class="absolute inset-0 z-0 opacity-20 pointer-events-none" 
