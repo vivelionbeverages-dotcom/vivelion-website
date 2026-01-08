@@ -2,47 +2,186 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media Center | Viv-Elion</title>
+    
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/vivelionbeverages-dotcom/vivelion-website/main/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
-    <script>tailwind.config = { theme: { extend: { colors: { brand: { navy: '#0a192f', gold: '#d4af37' } }, fontFamily: { sans: ['Montserrat'], serif: ['Cinzel'] } } } }</script>
-    <style>body { font-family: 'Montserrat', sans-serif; background-color: #0a192f; color: white; }</style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { brand: { navy: '#0a192f', gold: '#d4af37' } },
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'], serif: ['Abril Fatface', 'cursive'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Montserrat', sans-serif; background-color: #0a192f; color: white; overflow-x: hidden; }
+        
+        /* AURORA ENGINE */
+        .aurora-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: #0a192f; }
+        .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.6; animation: float 15s infinite alternate; }
+        .blob-1 { top: -10%; left: -10%; width: 70vw; height: 70vw; background: #1e3a8a; }
+        .blob-2 { bottom: -10%; right: -10%; width: 70vw; height: 70vw; background: #000000; animation-delay: -5s; }
+        .blob-3 { top: 40%; left: 30%; width: 40vw; height: 40vw; background: #d4af37; opacity: 0.2; }
+        @keyframes float { 0% { transform: translate(0, 0); } 100% { transform: translate(30px, 50px); } }
+
+        /* GLASS PANEL */
+        .glass-panel { 
+            background: rgba(10, 25, 47, 0.8); 
+            backdrop-filter: blur(20px);       
+            border-bottom: 1px solid rgba(255,255,255,0.3); 
+        }
+
+        /* NEWS CARD STYLE */
+        .news-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+        }
+        .news-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+    </style>
 </head>
 <body>
-    <nav class="fixed w-full z-50 bg-[#0a192f] border-b border-white/10 h-24 flex items-center">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-serif font-black text-white tracking-widest hover:text-brand-gold transition">VIV-ELION</a>
-            <div class="hidden md:flex gap-8 font-bold text-xs uppercase tracking-widest text-slate-200">
+
+    <div class="aurora-bg"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
+
+    <nav class="fixed w-full z-50 h-28 flex items-center transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 flex justify-between items-center relative">
+            <a href="index.html" class="flex items-center gap-4 z-50 group">
+                <img src="https://raw.githubusercontent.com/vivelionbeverages-dotcom/vivelion-website/main/logo.png" class="w-14 h-14 object-contain drop-shadow-lg" alt="Viv-Elion Logo">
+                <div class="flex flex-col">
+                    <span class="text-3xl font-serif font-black text-white tracking-widest hover:text-brand-gold transition">VIV-ELION</span>
+                    <span class="text-[9px] uppercase tracking-[0.4em] text-slate-400 font-bold">Beverage Company</span>
+                </div>
+            </a>
+            <div class="hidden md:flex h-full items-center gap-10 font-bold text-xs uppercase tracking-widest text-slate-200">
                 <a href="index.html" class="hover:text-brand-gold transition">Home</a>
-                <a href="about.html" class="hover:text-brand-gold transition">Our Company</a>
+                <a href="about.html" class="hover:text-brand-gold transition">Our Story</a>
+                <a href="brands.html" class="hover:text-brand-gold transition">Brands</a>
             </div>
         </div>
     </nav>
 
-    <header class="pt-40 pb-20 px-6 text-center">
-        <h1 class="text-5xl font-serif font-black text-white mb-4">MEDIA CENTER</h1>
-        <p class="text-slate-400">News, Press Releases, and Brand Assets.</p>
+    <header class="pt-48 pb-20 px-6 text-center">
+        <div data-aos="fade-down" data-aos-duration="1200">
+            <span class="text-brand-gold font-bold tracking-[0.4em] text-sm uppercase block mb-6">Press & Perspectives</span>
+            <h1 class="text-5xl md:text-8xl font-serif font-black text-white mb-6 drop-shadow-2xl">MEDIA CENTER</h1>
+            <p class="text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
+                The latest news, insights, and official announcements from Sangrana.
+            </p>
+        </div>
     </header>
 
-    <section class="py-20 px-6">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white/5 p-8 rounded-xl border border-white/10">
-                <span class="text-brand-gold text-xs font-bold uppercase tracking-widest">Press Release</span>
-                <h3 class="text-2xl font-bold text-white mt-2 mb-4">Viv-Elion Launches 100% Recyclable Bottle Initiative</h3>
-                <p class="text-slate-400 mb-6">Sangrana, Punjab – Viv-Elion today announced a major step towards sustainability...</p>
-                <a href="#" class="text-white border-b border-white hover:text-brand-gold hover:border-brand-gold transition">Read More</a>
-            </div>
-            <div class="bg-white/5 p-8 rounded-xl border border-white/10">
-                <span class="text-brand-gold text-xs font-bold uppercase tracking-widest">Company News</span>
-                <h3 class="text-2xl font-bold text-white mt-2 mb-4">Expansion of Sangrana Facility Completed</h3>
-                <p class="text-slate-400 mb-6">Our flagship plant has doubled its capacity to meet the growing summer demand...</p>
-                <a href="#" class="text-white border-b border-white hover:text-brand-gold hover:border-brand-gold transition">Read More</a>
+    <section class="py-24 px-6 relative">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
+                <article class="news-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute top-4 left-4 bg-brand-gold text-brand-navy text-[10px] font-bold px-3 py-1 rounded uppercase tracking-widest z-10">Corporate</div>
+                        <img src="https://github.com/vivelionbeverages-dotcom/vivelion-website/blob/main/onelitre.jpeg?raw=true" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <span class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-3 block">January 15, 2026</span>
+                        <h3 class="text-xl font-serif font-bold text-white mb-4 leading-normal group-hover:text-brand-gold transition">Viv-Elion Announces Launch of 'Pure-Grip' 1L Series</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Setting a new standard for home hydration, the new bottle features 100% recycled PET and an ergonomic design engineered for daily use.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-brand-gold text-xs font-bold uppercase tracking-widest hover:text-white transition">Read Release <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                    </div>
+                </article>
+
+                <article class="news-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute top-4 left-4 bg-green-600 text-white text-[10px] font-bold px-3 py-1 rounded uppercase tracking-widest z-10">Sustainability</div>
+                        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <span class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-3 block">December 10, 2025</span>
+                        <h3 class="text-xl font-serif font-bold text-white mb-4 leading-normal group-hover:text-brand-gold transition">Sangrana Plant Achieves Zero Liquid Discharge Status</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Marking a milestone in our 'Planet First' commitment, our manufacturing facility now recycles 100% of wastewater process-internally.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-brand-gold text-xs font-bold uppercase tracking-widest hover:text-white transition">Read Release <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                    </div>
+                </article>
+
+                <article class="news-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute top-4 left-4 bg-white text-brand-navy text-[10px] font-bold px-3 py-1 rounded uppercase tracking-widest z-10">Community</div>
+                        <img src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <span class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-3 block">November 05, 2025</span>
+                        <h3 class="text-xl font-serif font-bold text-white mb-4 leading-normal group-hover:text-brand-gold transition">Founder Vishal Kumar Inaugurates Local Skill Center</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Viv-Elion extends its community outreach by partnering with local institutions to provide technical training for youth in Sri Muktsar Sahib.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-brand-gold text-xs font-bold uppercase tracking-widest hover:text-white transition">Read Release <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
-    
-<footer class="bg-black text-white pt-16 pb-8 font-sans text-xs relative z-20">
+
+    <section class="py-24 bg-white text-brand-navy">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between mb-16">
+                <div>
+                    <h2 class="text-4xl font-serif font-black mb-4">BRAND RESOURCES</h2>
+                    <p class="text-slate-600 max-w-xl">Official assets for media partners, distributors, and creators.</p>
+                </div>
+                <a href="contact.html" class="mt-6 md:mt-0 border-b-2 border-brand-navy pb-1 font-bold tracking-widest uppercase text-xs hover:text-brand-gold hover:border-brand-gold transition">Media Inquiries</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-100 p-8 rounded-xl flex items-center justify-between group hover:bg-brand-navy hover:text-white transition duration-300">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center shadow-lg">
+                            <img src="https://raw.githubusercontent.com/vivelionbeverages-dotcom/vivelion-website/main/logo.png" class="w-10 h-10 object-contain">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Official Logo Kit</h4>
+                            <p class="text-xs text-slate-500 uppercase tracking-widest group-hover:text-slate-400">PNG, SVG, AI • 12MB</p>
+                        </div>
+                    </div>
+                    <button class="w-10 h-10 rounded-full border border-current flex items-center justify-center hover:bg-white hover:text-brand-navy transition">
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+                </div>
+
+                <div class="bg-slate-100 p-8 rounded-xl flex items-center justify-between group hover:bg-brand-navy hover:text-white transition duration-300">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center shadow-lg overflow-hidden">
+                            <img src="250ml.jpeg" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Product Imagery</h4>
+                            <p class="text-xs text-slate-500 uppercase tracking-widest group-hover:text-slate-400">High-Res Pack Shots • 45MB</p>
+                        </div>
+                    </div>
+                    <button class="w-10 h-10 rounded-full border border-current flex items-center justify-center hover:bg-white hover:text-brand-navy transition">
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white pt-16 pb-8 font-sans text-xs relative z-20">
         <div class="container mx-auto px-6 max-w-7xl">
             
             <div class="flex flex-col md:flex-row justify-between items-center pb-12 border-b border-white/20">
@@ -105,7 +244,7 @@
                     </a>
 
                     <a href="#" class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-black transition duration-300 group">
-                        <svg class="w-4 h-4 fill-current text-white group-hover:text-black" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                        <svg class="w-4 h-4 fill-current text-white group-hover:text-black" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                     </a>
 
                     <a href="https://twitter.com/VishalKumar_CEO" class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-black transition duration-300 group">
@@ -122,6 +261,20 @@
             </div>
         </div>
     </footer>
-    
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 100 });
+        
+        // Navigation Scroll Logic
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-panel');
+            } else {
+                navbar.classList.remove('glass-panel');
+            }
+        });
+    </script>
 </body>
 </html>
